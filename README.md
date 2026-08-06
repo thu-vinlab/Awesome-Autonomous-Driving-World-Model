@@ -137,7 +137,7 @@ Object- and agent-centric states provide interpretable interaction structure and
 
 These methods learn predictive features without requiring every rollout to be decoded to sensor space, or align multiple state spaces in one model.
 
-- **UniWorld** (2023) - 3D scene pretraining through world-model objectives. [[P](https://arxiv.org/abs/2308.07234)] [[C](https://github.com/chaytonmin/UniWorld)]
+- **UniWorld** (2023) - 3D scene pretraining through world-model objectives. [[P](https://arxiv.org/abs/2308.07234)] [[C](https://github.com/whuhxb/UniWorld)]
 - **DriveWorld** (CVPR 2024) - 4D pretraining for scene understanding. [[P](https://arxiv.org/abs/2405.04390)]
 - **LAW** (2024) - latent world modeling for end-to-end driving. [[P](https://arxiv.org/abs/2406.08481)] [[C](https://github.com/BraveGroup/LAW)]
 - **LatentDriver** (2024) - probabilistic decisions from a latent world model. [[P](https://arxiv.org/abs/2409.15730)] [[C](https://github.com/Sephirex-X/LatentDriver)]
@@ -188,7 +188,7 @@ Additional mechanism-focused papers:
 
 ### Predictive representation pretraining
 
-- **UniWorld** - autonomous-driving pretraining through world models. [[P](https://arxiv.org/abs/2308.07234)] [[C](https://github.com/chaytonmin/UniWorld)]
+- **UniWorld** - autonomous-driving pretraining through world models. [[P](https://arxiv.org/abs/2308.07234)] [[C](https://github.com/whuhxb/UniWorld)]
 - **ViDAR** - visual point-cloud forecasting for scalable pretraining. [[P](https://arxiv.org/abs/2312.17655)] [[C](https://github.com/OpenDriveLab/ViDAR)]
 - **DriveWorld** - 4D pretraining for scene understanding. [[P](https://arxiv.org/abs/2405.04390)]
 - **AD-L-JEPA** - self-supervised spatial predictive learning for LiDAR. [[P](https://arxiv.org/abs/2501.04969)] [[C](https://github.com/HaoranZhuExplorer/AD-L-JEPA-Release)]
@@ -208,7 +208,7 @@ Additional mechanism-focused papers:
 ### Safety, robustness, and uncertainty
 
 - **SafeDreamer** (ICLR 2024) - safe reinforcement learning with world models. [[P](https://openreview.net/forum?id=tsE5HLYtYg)] [[C](https://github.com/PKU-Alignment/SafeDreamer)]
-- **VL-SAFE** (2025) - vision-language-guided, safety-aware world-model reinforcement learning. [[P](https://arxiv.org/abs/2505.16377)] [[W](https://ys-qu.github.io/vlsafe-website/)]
+- **VL-SAFE** (2025) - vision-language-guided, safety-aware world-model reinforcement learning. [[P](https://arxiv.org/abs/2505.16377)]
 - **U4D** (CVPR 2026) - uncertainty-aware 4D LiDAR world modeling. [[P](https://arxiv.org/abs/2512.02982)]
 - **BadDreamer** (2026) - transferable backdoor attacks against video world models. [[P](https://arxiv.org/abs/2606.21172)]
 
@@ -236,9 +236,9 @@ Open deployment questions include calibrated uncertainty, credible rollout horiz
 
 ## Workshops and challenges
 
-- **CVPR 2025 Autonomous Grand Challenge - World Model Track**. [[W](https://opendrivelab.com/challenge25/#1x-wm)]
+- **CVPR 2025 Autonomous Grand Challenge - World Model Track**. [[W](https://opendrivelab.com/challenge2025/#1x-wm)]
 - **WorldModelBench: The 1st Workshop on Benchmarking World Models, CVPR 2025**. [[W](https://worldmodelbench.github.io/)]
-- **CVPR 2024 Autonomous Grand Challenge - Predictive World Model Track**. [[W](https://opendrivelab.com/challenge24/#predictive_world_model)]
+- **CVPR 2024 Autonomous Grand Challenge - Predictive World Model Track**. [[W](https://opendrivelab.com/challenge2024/#predictive_world_model)]
 - **CVPR 2023 Workshop on Autonomous Driving - 3D Occupancy Forecasting Challenge**. [[W](https://eval.ai/web/challenges/challenge-page/1977/overview)] [[D](https://www.argoverse.org/av2.html)]
 
 ## Related collections
