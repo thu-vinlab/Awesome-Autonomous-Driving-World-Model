@@ -22,7 +22,7 @@ jobs:
         with:
           args: >-
             --no-progress
-            --accept 200,206,429
+            --accept 200,202,206,429
             --exclude-loopback
             --exclude '^https://doi\.org/10\.36227/techrxiv\.'
             --max-retries 3
