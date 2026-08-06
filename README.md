@@ -12,8 +12,29 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 
 **Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). The compact README below remains the expert-curated entry point.
 
+## Autonomous driving world model surveys
+
+### Directly focused surveys
+
+| Year | Survey | Distinctive focus | Resources |
+| ---: | --- | --- | --- |
+| 2026 | **The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey** | Comprehensive taxonomy of driving world models and their role in autonomous-driving systems | [[P](https://arxiv.org/abs/2502.10498)] [[Journal](https://journal.hep.com.cn/fcs/EN/home)] [[List](https://github.com/LMD0311/Awesome-World-Model)] |
+| 2025 | **A Survey of World Models for Autonomous Driving** | Driving-specific methods, applications, datasets, and challenges | [[P](https://arxiv.org/abs/2501.11260)] [[List](https://github.com/HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey)] |
+| 2025 | **Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook** | Robustness, failure factors, and progressive evaluation | [[P](https://doi.org/10.36227/techrxiv.176523308.84756413/v1)] [[List](https://github.com/MoyangSensei/AwesomeRobustDWM)] |
+| 2024 | **Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey** | Relationship between driving video generation and action-conditioned world modeling | [[P](https://arxiv.org/abs/2411.02914)] |
+| 2024 | **World Models for Autonomous Driving: An Initial Survey** | Early formulation and taxonomy of the driving-world-model landscape | [[P](https://arxiv.org/abs/2403.02622)] |
+
+### Closely related boundary surveys
+
+These surveys cover neighboring areas used in driving world models, but their full scope is broader than the action-conditioned, iterable definition adopted here.
+
+- **A Survey on Future Physical World Generation for Autonomous Driving** (2025) - future physical-scene generation. [[P](https://dl.acm.org/doi/full/10.1145/3769748.3773345)]
+- **A Survey on Multimodal Large Language Models for Autonomous Driving** (WACV Workshops 2024) - driving VLMs and multimodal reasoning. [[P](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)]
+- **Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies** (2024) - data engines and closed-loop development. [[P](https://arxiv.org/abs/2401.12888)]
+
 ## Contents
 
+- [Autonomous driving world model surveys](#autonomous-driving-world-model-surveys)
 - [Full cross-repository catalog](#full-cross-repository-catalog)
 - [Scope and taxonomy](#scope-and-taxonomy)
 - [Recommended starting points](#recommended-starting-points)
@@ -83,11 +104,7 @@ These papers provide a compact route through the landscape:
 
 ### Autonomous driving
 
-- The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey (FCS 2026). [[P](https://arxiv.org/abs/2502.10498)]
-- A Survey of World Models for Autonomous Driving (2025). [[P](https://arxiv.org/abs/2501.11260)]
-- Exploring the Interplay Between Video Generation and World Models in Autonomous Driving (2024). [[P](https://arxiv.org/abs/2411.02914)]
-- World Models for Autonomous Driving: An Initial Survey (2024). [[P](https://arxiv.org/abs/2403.02622)]
-- Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook (2025). [[P](https://doi.org/10.36227/techrxiv.176523308.84756413/v1)] [[C](https://github.com/MoyangSensei/AwesomeRobustDWM)]
+See the front-page [autonomous driving world model survey collection](#autonomous-driving-world-model-surveys) for the complete driving-focused list and neighboring boundary surveys.
 
 ### General world models and physical AI
 
