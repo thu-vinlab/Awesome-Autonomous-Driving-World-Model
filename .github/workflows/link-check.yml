@@ -26,6 +26,8 @@ jobs:
             --exclude-loopback
             --exclude '^https://doi\.org/10\.36227/techrxiv\.'
             --exclude '^https://dl\.acm\.org/doi/full/10\.1145/3769748\.3773345$'
+            --exclude '^https://doi\.org/10\.2139/ssrn\.6827179$'
+            --exclude '^https://doi\.org/10\.3390/app15168986$'
             --max-retries 3
             --retry-wait-time 2
             README.md
