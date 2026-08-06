@@ -25,6 +25,7 @@ jobs:
             --accept 200,202,206,429
             --exclude-loopback
             --exclude '^https://doi\.org/10\.36227/techrxiv\.'
+            --exclude '^https://dl\.acm\.org/doi/full/10\.1145/3769748\.3773345$'
             --max-retries 3
             --retry-wait-time 2
             README.md
