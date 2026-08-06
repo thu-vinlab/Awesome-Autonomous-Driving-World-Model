@@ -10,41 +10,44 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 
 > **Last updated:** August 2026. This is a living list, not a claim of completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
 
-**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). The compact README below remains the expert-curated entry point.
+**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). See also the [survey-by-survey comparison of teams, publication status, original taxonomies, scope, evaluation, deployment, and differences from our framework](SURVEY_COMPARISON.md). The compact README below remains the expert-curated entry point.
 
 ## Autonomous driving world model surveys
 
 > **Coverage note (searched 6 August 2026):** this collection combines the three source repositories with independent title/keyword searches of arXiv, OpenAlex, Crossref, Semantic Scholar, and GitHub. It aims for high coverage of public English-language surveys, but no literature search can guarantee permanent completeness; newly indexed and non-English work may still be missing.
 
+**Detailed audit:** [compare every survey's authors, institutions, publication status, native classification, coverage, and relation to our taxonomy](SURVEY_COMPARISON.md). The tables below are only the compact index.
+
 ### Comprehensive surveys
 
-| Year | Survey | Distinctive focus | Resources |
-| ---: | --- | --- | --- |
-| 2026 | **World Models for Autonomous Driving: From Future Generation to Decision Making** | MPC-oriented taxonomy spanning future generation, planning, and hybrid prediction-planning models | [[Preprint](https://doi.org/10.2139/ssrn.6827179)] |
-| 2026 | **Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges** | Latent worlds, latent actions, latent generators, closed-loop evaluation, and deployment | [[P](https://arxiv.org/abs/2603.09086)] |
-| 2026 | **The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey** | Comprehensive taxonomy of driving world models and their role in autonomous-driving systems | [[P](https://arxiv.org/abs/2502.10498)] [[Journal](https://journal.hep.com.cn/fcs/EN/home)] [[List](https://github.com/LMD0311/Awesome-World-Model)] |
-| 2025 | **Research on World Models for Connected Automated Driving: Advances, Challenges, and Outlook** | Cooperative perception, prediction, decision, control, human-machine collaboration, and scene generation for connected vehicles | [[Journal](https://doi.org/10.3390/app15168986)] |
-| 2025 | **A Survey of World Models for Autonomous Driving** | Driving-specific methods, applications, datasets, and challenges | [[P](https://arxiv.org/abs/2501.11260)] [[List](https://github.com/HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey)] |
-| 2024 | **Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey** | Relationship between driving video generation and action-conditioned world modeling | [[P](https://arxiv.org/abs/2411.02914)] |
-| 2024 | **World Models for Autonomous Driving: An Initial Survey** | Early formulation and taxonomy of the driving-world-model landscape | [[P](https://arxiv.org/abs/2403.02622)] [[Journal](https://doi.org/10.1109/TIV.2024.3398357)] |
+| Year | Survey | Team / verified status | Authors' main classification | Resources |
+| ---: | --- | --- | --- | --- |
+| 2026 | **World Models for Autonomous Driving: From Future Generation to Decision Making** | Tongji-led team; SSRN working paper | MPC: future generation / planning / hybrid; representation and mechanism cross-comparison | [[Preprint](https://doi.org/10.2139/ssrn.6827179)] [[Details](SURVEY_COMPARISON.md#world-models-for-autonomous-driving-from-future-generation-to-decision-making)] |
+| 2026 | **Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges** | RWTH Aachen + TU Delft; arXiv, under review | latent target / form / structural prior; four use families and five internal mechanics | [[P](https://arxiv.org/abs/2603.09086)] [[Details](SURVEY_COMPARISON.md#latent-world-models-for-automated-driving-a-unified-taxonomy-evaluation-framework-and-open-challenges)] |
+| 2025 | **The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey** | HUST + Baidu; arXiv v2 | predicted modality: video / point cloud / occupancy / latent / traffic map | [[P](https://arxiv.org/abs/2502.10498)] [[List](https://github.com/LMD0311/Awesome-World-Model)] [[Details](SURVEY_COMPARISON.md#the-role-of-world-models-in-shaping-autonomous-driving-a-comprehensive-survey)] |
+| 2025 | **Research on World Models for Connected Automated Driving: Advances, Challenges, and Outlook** | Shanghai University of Engineering Science; *Applied Sciences* | six CAV application domains | [[Journal](https://doi.org/10.3390/app15168986)] [[Details](SURVEY_COMPARISON.md#research-on-world-models-for-connected-automated-driving-advances-challenges-and-outlook)] |
+| 2025 | **A Survey of World Models for Autonomous Driving** | Zhejiang University CCAI; arXiv v4, submitted to ACM | future physical world / behavior planning / prediction-planning interaction | [[P](https://arxiv.org/abs/2501.11260)] [[List](https://github.com/FengZicai/AwesomeWMAD)] [[Details](SURVEY_COMPARISON.md#a-survey-of-world-models-for-autonomous-driving)] |
+| 2024 | **Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey** | Southeast University-led academic-industry team; arXiv | video: traditional / diffusion; WM: perception-prediction / RL | [[P](https://arxiv.org/abs/2411.02914)] [[Details](SURVEY_COMPARISON.md#exploring-the-interplay-between-video-generation-and-world-models-in-autonomous-driving-a-survey)] |
+| 2024/25 | **World Models for Autonomous Driving: An Initial Survey** | University of Macau-led multi-university team; IEEE T-IV | architecture foundations / applications; driving generation / planning-control | [[P](https://arxiv.org/abs/2403.02622)] [[Journal](https://doi.org/10.1109/TIV.2024.3398357)] [[Details](SURVEY_COMPARISON.md#world-models-for-autonomous-driving-an-initial-survey)] |
 
 ### Thematic driving-world-model surveys
 
-- **Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models** (2026) - shared predictive state, inter-agent cognition, cooperative planning, and closed-loop validation. [[P](https://arxiv.org/abs/2606.13840)] [[List](https://github.com/dl-m9/Multi-Agent-Embodied-Autonomous-Driving)]
-- **Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook** (2025) - robustness, failure factors, and progressive evaluation. [[P](https://doi.org/10.36227/techrxiv.176523308.84756413/v1)] [[List](https://github.com/MoyangSensei/AwesomeRobustDWM)]
+- **Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models** (2026) - shared predictive state, inter-agent cognition, cooperative planning, and closed-loop validation. [[P](https://arxiv.org/abs/2606.13840)] [[List](https://github.com/dl-m9/Multi-Agent-Embodied-Autonomous-Driving)] [[Details](SURVEY_COMPARISON.md#multi-agent-embodied-autonomous-driving-from-v2x-information-exchange-to-shared-world-models)]
+- **Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook** (2025) - robustness, failure factors, and progressive evaluation. [[P](https://doi.org/10.36227/techrxiv.176523308.84756413/v1)] [[List](https://github.com/MoyangSensei/AwesomeRobustDWM)] [[Details](SURVEY_COMPARISON.md#progressive-robustness-aware-world-models-in-autonomous-driving-a-review-and-outlook)]
 
 ### Closely related boundary surveys
 
 These surveys cover neighboring areas used in driving world models, but their full scope is broader than the action-conditioned, iterable definition adopted here.
 
-- **A Survey on Future Physical World Generation for Autonomous Driving** (2025) - future physical-scene generation. [[P](https://dl.acm.org/doi/full/10.1145/3769748.3773345)]
-- **Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis** (IEEE OJ-ITS 2026) - foundation models, including world models, for scenario generation, analysis, and safety testing. [[P](https://arxiv.org/abs/2506.11526)] [[Journal](https://doi.org/10.1109/OJITS.2026.3660686)] [[List](https://github.com/TUM-AVS/FM-AD-Survey)]
-- **A Survey on Multimodal Large Language Models for Autonomous Driving** (WACV Workshops 2024) - driving VLMs and multimodal reasoning. [[P](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)]
-- **Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies** (2024) - data engines and closed-loop development. [[P](https://arxiv.org/abs/2401.12888)]
+- **A Survey on Future Physical World Generation for Autonomous Driving** (ACM MMAsia 2025) - future physical-scene generation. [[P](https://dl.acm.org/doi/full/10.1145/3769748.3773345)] [[Details](SURVEY_COMPARISON.md#a-survey-on-future-physical-world-generation-for-autonomous-driving)]
+- **Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis** (IEEE OJ-ITS 2026) - foundation models, including world models, for scenario generation, analysis, and safety testing. [[P](https://arxiv.org/abs/2506.11526)] [[Journal](https://doi.org/10.1109/OJITS.2026.3660686)] [[List](https://github.com/TUM-AVS/FM-AD-Survey)] [[Details](SURVEY_COMPARISON.md#foundation-models-in-autonomous-driving-a-survey-on-scenario-generation-and-scenario-analysis)]
+- **A Survey on Multimodal Large Language Models for Autonomous Driving** (WACV Workshops 2024) - driving VLMs and multimodal reasoning. [[P](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)] [[Details](SURVEY_COMPARISON.md#a-survey-on-multimodal-large-language-models-for-autonomous-driving)]
+- **Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies** (arXiv 2024) - data engines and closed-loop development. [[P](https://arxiv.org/abs/2401.12888)] [[List](https://github.com/LincanLi98/Awesome-Data-Centric-Autonomous-Driving)] [[Details](SURVEY_COMPARISON.md#data-centric-evolution-in-autonomous-driving-a-comprehensive-survey-of-big-data-system-data-mining-and-closed-loop-technologies)]
 
 ## Contents
 
 - [Autonomous driving world model surveys](#autonomous-driving-world-model-surveys)
+- [Detailed survey comparison](SURVEY_COMPARISON.md)
 - [Full cross-repository catalog](#full-cross-repository-catalog)
 - [Scope and taxonomy](#scope-and-taxonomy)
 - [Recommended starting points](#recommended-starting-points)
