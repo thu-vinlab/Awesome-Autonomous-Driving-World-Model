@@ -10,8 +10,11 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 
 > **Last updated:** August 2026. This is a living list, not a claim of completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
 
+**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). The compact README below remains the expert-curated entry point.
+
 ## Contents
 
+- [Full cross-repository catalog](#full-cross-repository-catalog)
 - [Scope and taxonomy](#scope-and-taxonomy)
 - [Recommended starting points](#recommended-starting-points)
 - [Surveys and perspectives](#surveys-and-perspectives)
@@ -29,23 +32,33 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 - [Related collections](#related-collections)
 - [Contributing and acknowledgements](#contributing-and-acknowledgements)
 
+## Full cross-repository catalog
+
+The [full reference catalog](FULL_REFERENCE_CATALOG.md) exhaustively extracts all bullets with explicit paper or report links from these requested sources, then deduplicates and reclassifies them under our paper outline:
+
+- [HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey](https://github.com/HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey)
+- [ChaofanTao/Autoregressive-Models-in-Vision-Survey](https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey)
+- [LMD0311/Awesome-World-Model](https://github.com/LMD0311/Awesome-World-Model)
+
+Every catalog entry exposes its Chapter 2 admission status, Chapter 3 representation category, Chapter 4 rollout mechanism, Chapter 5-7 roles, source repository, and available paper/code/project links. The accompanying [JSON dataset](data/reference_catalog.json) retains source sections and raw upstream entries for audit and future updates.
+
 ## Scope and taxonomy
 
-We include a resource when it studies a learned model of driving-scene dynamics and satisfies at least one of these criteria:
+We define a learned driving world model as an action-conditioned transition function, `s(t+1) = F(s(t), a(t))`, and use two core admission criteria:
 
-1. predicts a future driving state from past or current observations;
-2. conditions that prediction on ego actions, routes, text, or other interventions;
-3. supports counterfactual simulation, planning, policy learning, or predictive pretraining;
-4. evaluates temporal, geometric, physical, interactive, or safety properties of such a model.
+1. **Action conditionality:** `F` accepts an ego action and responds materially; different actions should lead to different future states.
+2. **Rollout capability:** the predicted state is compatible with the model input so that `F` can be applied iteratively beyond a single fixed prediction.
 
-Pure single-frame generation, perception-only methods without a temporal predictive objective, and generic video generators without driving-specific evidence are normally out of scope. Borderline papers should explain their world-model contribution in the PR.
+Because the field still lacks a settled boundary, we also follow an inclusive author-definition rule: a paper that explicitly calls itself a world model and broadly satisfies both criteria is retained as a candidate, with its admission status exposed for audit.
+
+Pure video generation such as Sora, static NeRF/3DGS reconstruction, generic temporal prediction, perception-only VLMs, action-only VLAs, and E2E driving systems without a predictive world-model component are outside the core scope. Hand-engineered simulators such as CARLA are resources rather than learned world models. Robotics, games, Dreamer, V-JEPA, Genie, and autoregressive visual generation are retained as cross-domain origins or adjacent methodology, not mislabeled as driving world models.
 
 Each work has one primary home even when it spans several categories. We use the following compact vocabulary:
 
 | Dimension | Categories | Central question |
 | --- | --- | --- |
-| Future-state representation | observation, scene, latent, unified | What state is predicted? |
-| Rollout mechanism | autoregressive, diffusion, flow, hybrid | How is the future generated? |
+| Future-state representation | observation (image/video or point cloud), scene (entity or geometry), latent | What state is predicted and where is the loss applied? |
+| Rollout mechanism | latent dynamics/state space/JEPA, autoregressive, diffusion/flow, hybrid | How is the future generated? |
 | System role | data engine, simulator, planner, pretraining | What does the model do for driving? |
 | Readiness | fidelity, interaction, safety, runtime | Can its behavior be evaluated and trusted? |
 

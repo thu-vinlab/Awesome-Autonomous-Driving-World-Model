@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Generated catalog links preserve upstream history and are audited separately.
       - name: Check Markdown links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -26,5 +27,6 @@ jobs:
             --exclude '^https://doi\.org/10\.36227/techrxiv\.'
             --max-retries 3
             --retry-wait-time 2
-            "**/*.md"
+            README.md
+            CONTRIBUTING.md
           fail: true

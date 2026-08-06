@@ -4,14 +4,12 @@ Thank you for helping improve Awesome Autonomous Driving World Models.
 
 ## What belongs in this list
 
-A submission should concern a learned model of driving-scene dynamics and do at least one of the following:
+A core submission should concern a learned model of driving-scene dynamics and satisfy both criteria:
 
-- predict future observations, scene states, or latent states;
-- respond to actions or other interventions;
-- support simulation, planning, policy learning, data generation, or predictive pretraining;
-- evaluate the temporal, geometric, physical, interactive, safety, or deployment properties of a driving world model.
+- **Action conditionality:** ego actions are inputs and materially change predicted future states.
+- **Rollout capability:** predicted states can feed subsequent transitions rather than supporting only one fixed prediction.
 
-The list is curated rather than exhaustive. A public paper is required. Official code, data, model, and project links are strongly preferred. Pure single-frame generation and perception-only work without temporal prediction are normally out of scope.
+We inclusively retain papers whose authors explicitly identify them as world models and which broadly meet both criteria, but borderline submissions must state the evidence. Pure generation, static reconstruction, perception-only VLMs, action-only VLAs, non-predictive E2E driving, and hand-engineered simulators do not belong in the core paper list; they may be proposed as boundary or methodological resources. A public paper is required, and official code, data, model, and project links are strongly preferred.
 
 ## Before opening a pull request
 
@@ -40,3 +38,13 @@ Omit labels that are unavailable. Use the publication venue when confirmed; othe
 - [ ] The link-check workflow passes, or the PR explains a site that blocks automated checks.
 
 Corrections to metadata, broken links, categorization, and scope are as valuable as new entries. For changes affecting many entries, please open an issue first so the organization can be discussed before substantial work is done.
+
+## Updating the full catalog
+
+`FULL_REFERENCE_CATALOG.md` and `data/reference_catalog.json` are generated files. Clone or update the three source repositories named in the catalog as sibling directories of this repository, then run:
+
+```shell
+ruby scripts/build_full_catalog.rb
+```
+
+Commit the generator and both generated outputs together. Review changes to admission status and Chapter 3 representation manually; titles and upstream section names cannot replace checking the actual action input, predicted state, loss, and rollout procedure.
