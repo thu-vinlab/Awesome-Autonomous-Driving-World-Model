@@ -12,6 +12,20 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 
 **Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). See also the [survey-by-survey comparison of teams, publication status, original taxonomies, scope, evaluation, deployment, and differences from our framework](SURVEY_COMPARISON.md). The compact README below remains the expert-curated entry point.
 
+## Autonomous driving background milestones
+
+Before the world-model methods, the field evolved through an explicit modular stack, direct end-to-end learning, planning-oriented joint optimization, and VLA/VLM-to-driving systems. The [background milestone guide](AD_BACKGROUND_MILESTONES.md) records the representative teams, venues, milestone significance, and the boundary between these precursors and learned world models.
+
+| Paradigm | Representative citation | Main contribution | World-model boundary |
+| --- | --- | --- | --- |
+| Modular system | **Paden et al.**, *A Survey of Motion Planning and Control Techniques for Self-Driving Urban Vehicles* (IEEE T-IV 2016) | Canonical explicit planning/control pipeline | Background survey; no learned recursive state transition |
+| Modular supplement | **Badue et al.**, *Self-driving cars: A survey* (ESWA 2021) | Broader system-level survey of perception, mapping, planning, control, and deployment | Optional background citation, not a world model |
+| End-to-end driving | **Bojarski et al.**, *End to End Learning for Self-Driving Cars* (NVIDIA PilotNet, 2016) | Direct camera-to-steering policy learning | Policy prediction, not future-state rollout |
+| Planning-oriented end-to-end | **Hu et al.**, *Planning-oriented Autonomous Driving* (UniAD, CVPR 2023) | Joint task coordination around planning | Planning-centered precursor; not itself a world model |
+| VLA / VLM-to-driving | **Tian et al.**, *DriveVLM* (2024) | Language-mediated scene reasoning and hierarchical planning, with DriveVLM-Dual vehicle deployment | VLA/VLM bridge; only predictive iterable components enter the WM scope |
+
+For the compact four-citation introduction route, use Paden, Bojarski, UniAD, and DriveVLM; use Badue when a broader modular-system survey is needed.
+
 ## Autonomous driving world model surveys
 
 > **Coverage note (searched 6 August 2026):** this collection combines the three source repositories with independent title/keyword searches of arXiv, OpenAlex, Crossref, Semantic Scholar, and GitHub. It aims for high coverage of public English-language surveys, but no literature search can guarantee permanent completeness; newly indexed and non-English work may still be missing.
@@ -47,6 +61,7 @@ These surveys cover neighboring areas used in driving world models, but their fu
 ## Contents
 
 - [Autonomous driving world model surveys](#autonomous-driving-world-model-surveys)
+- [Autonomous driving background milestones](#autonomous-driving-background-milestones)
 - [Detailed survey comparison](SURVEY_COMPARISON.md)
 - [Full cross-repository catalog](#full-cross-repository-catalog)
 - [Scope and taxonomy](#scope-and-taxonomy)

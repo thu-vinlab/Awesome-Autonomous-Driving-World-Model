@@ -43,6 +43,8 @@ Corrections to metadata, broken links, categorization, and scope are as valuable
 
 When adding or correcting a survey, update both the compact README index and `SURVEY_COMPARISON.md`. Record the authors, paper-level affiliations, verified publication status, scope, the authors' own taxonomy, evaluation/deployment coverage, companion resources, and the difference from this repository's framework. Cite a preprint as a preprint until a publisher or DOI record confirms publication, and state the evidence limitation when the full text or affiliations cannot be verified.
 
+Historical background citations belong in `AD_BACKGROUND_MILESTONES.md`, not in the core world-model categories, unless the work also provides an action-conditioned and recursively iterable learned transition model.
+
 ## Updating the full catalog
 
 `FULL_REFERENCE_CATALOG.md` and `data/reference_catalog.json` are generated files. Clone or update the three source repositories named in the catalog as sibling directories of this repository, then run:
