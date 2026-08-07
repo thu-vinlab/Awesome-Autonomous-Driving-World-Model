@@ -4,14 +4,14 @@ Thank you for helping improve Awesome Autonomous Driving World Models.
 
 ## What belongs in this list
 
-A core submission should concern driving and be explicitly presented by its authors as a **world model**, **driving world model**, or **world-action model** in the title, abstract, or paper. This author-definition rule determines inclusion.
+A Core submission must concern driving and satisfy either the **Author-defined WM** or **Definition-aligned WM** route described below. The route must be named explicitly in the entry.
 
 We separately record two analytical properties:
 
 - **Action conditionality:** ego actions are inputs and materially change predicted future states.
 - **Rollout capability:** predicted states can feed subsequent transitions rather than supporting only one fixed prediction.
 
-Neither property is an exclusion threshold. A driving paper that the authors explicitly define as a world model remains in Core even when its action response or recursive rollout is absent or unclear; the entry should state that limitation rather than override the authors' terminology. Papers that do not make a world-model claim may be proposed as related generation, prediction, VLA/E2E, or methodological resources. Static reconstruction, hand-engineered simulators, generic vision, and unrelated robotics do not belong in Core. A public paper is required, and official code, data, model, and project links are strongly preferred.
+There are two Core admission routes. A driving paper that the authors explicitly define as a world model remains in Core even when its action response or recursive rollout is absent or unclear; the entry should state that limitation rather than override the authors' terminology. A paper that does not make that claim may still enter as **Definition-aligned WM** when the paper demonstrates a learned future-state transition, material ego/agent-action response, and compatible multi-step rollout or imagination. Cite the supporting sections or experiments because this is an editorial classification. Static reconstruction, ordinary one-step prediction, hand-engineered simulators, generic vision, and unrelated robotics do not belong in Core. A public paper is required, and official code, data, model, and project links are strongly preferred.
 
 ## Before opening a pull request
 
@@ -31,7 +31,7 @@ Omit labels that are unavailable. Use the publication venue when confirmed; othe
 
 ## Pull request checklist
 
-- [ ] The Core resource is driving-related and the authors explicitly define it as a world model or world-action model.
+- [ ] The Core resource is driving-related and is either author-defined as a world model/world-action model or has cited evidence for the Definition-aligned route.
 - [ ] The entry is not already present.
 - [ ] The title, venue, year, and links match the primary source.
 - [ ] The work appears in one primary category.
@@ -46,7 +46,7 @@ Corrections to metadata, broken links, categorization, and scope are as valuable
 
 `README.md` is the single literature collection. When adding or correcting a survey, record the authors or team, verified publication status, the authors' own taxonomy, core contribution, and difference from this repository's framework. Preserve the survey authors' taxonomy rather than replacing it with ours. Cite a preprint as a preprint until a publisher or DOI confirms publication.
 
-Historical background citations belong in the milestone table, not in the Core Taxonomy, unless the authors explicitly present the driving method as a world model or world-action model. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
+Historical background citations belong in the milestone table, not in the Core Taxonomy, unless they satisfy one of the two Core admission routes. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
 
 Every core item must retain an audit label:
 
