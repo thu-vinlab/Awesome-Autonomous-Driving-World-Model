@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Generated catalog links preserve upstream history and are audited separately.
       - name: Check Markdown links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -33,6 +32,5 @@ jobs:
             --max-retries 3
             --retry-wait-time 2
             README.md
-            SURVEY_COMPARISON.md
             CONTRIBUTING.md
           fail: true

@@ -8,13 +8,13 @@ A curated collection of **world models for autonomous driving**, organized by ho
 
 Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It emphasizes representative, reproducible, and evaluation-relevant resources. The list is maintained as a companion resource for our ongoing review, *Autonomous Driving World Models: Representations, Rollout Mechanisms, System Roles, and Deployment*.
 
-> **Last updated:** August 2026. This is a living list, not a claim of completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
+> **Last updated:** August 2026. This is a living, field-specific list rather than a claim of permanent completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
 
-**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). See also the [survey-by-survey comparison of teams, publication status, detailed original taxonomies, core contributions, scope, evaluation, deployment, and differences from our framework](SURVEY_COMPARISON.md). The compact README below remains the expert-curated entry point.
+This README is the complete reader-facing collection. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other source-archive records are deliberately excluded even when they appeared in an upstream list.
 
 ## Autonomous driving background milestones
 
-Before the world-model methods, the field evolved through an explicit modular stack, direct end-to-end learning, planning-oriented joint optimization, and VLA/VLM-to-driving systems. The [background milestone guide](AD_BACKGROUND_MILESTONES.md) records the representative teams, venues, milestone significance, and the boundary between these precursors and learned world models.
+Before the world-model methods, the field evolved through an explicit modular stack, direct end-to-end learning, planning-oriented joint optimization, and VLA/VLM-to-driving systems.
 
 | Paradigm | Representative citation | Main contribution | World-model boundary |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@ For the compact four-citation introduction route, use Paden, Bojarski, UniAD, an
 
 > **Coverage note (searched 6 August 2026):** this collection combines the three source repositories with independent title/keyword searches of arXiv, OpenAlex, Crossref, Semantic Scholar, and GitHub. It aims for high coverage of public English-language surveys, but no literature search can guarantee permanent completeness; newly indexed and non-English work may still be missing.
 
-The tables below place the related-survey analysis directly before our taxonomy. Titles link to the papers. A separate [evidence audit](SURVEY_COMPARISON.md) preserves full author lists, affiliations, publication verification, and source-level notes.
+The tables below place the related-survey analysis directly before our taxonomy. Titles link to the papers; each row records the team, publication status, authors' own classification, contribution, and difference from our framework.
 
 ### Comprehensive surveys
 
@@ -62,27 +62,10 @@ These surveys supply neighboring literature, but their full scope is broader tha
 | [**A Survey on Multimodal Large Language Models for Autonomous Driving**](https://doi.org/10.1109/WACVW60836.2024.00106) (WACV Workshops 2024) | driving / transportation / maps × MLLM tasks and benchmarks | VLM/VLA boundary, semantic reasoning, hallucination, and grounding references | [[Paper](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)] |
 | [**Data-Centric Evolution in Autonomous Driving**](https://arxiv.org/abs/2401.12888) (2024) | big-data systems / data mining / development and post-deployment closed loops | Data-engine and engineering-loop references; its “closed loop” is not necessarily recursive world-model rollout | [[Paper](https://arxiv.org/abs/2401.12888)] [[List](https://github.com/LincanLi98/Awesome-Data-Centric-Autonomous-Driving)] |
 
-### Cross-domain foundational surveys and methodological sources
-
-These works contribute safety, embodied-AI, simulator, 3D/4D, general-world-model, video-efficiency, or RL foundations. They are indexed separately because not every reviewed method satisfies our ego-action and iterable-rollout admission criteria.
-
-| Year | Scope | Survey / source | Detailed native classification | Main contribution | Resources |
-| ---: | --- | --- | --- | --- | --- |
-| 2026 | Embodied AI | [**A Comprehensive Survey on World Models for Embodied AI**](https://arxiv.org/abs/2510.16732) | functionality: decision-coupled / general-purpose; temporal: sequential simulation / global difference; spatial: vector / token / grid / decomposed rendering | Formalizes embodied WMs and provides a three-axis taxonomy, resources, metrics, and quantitative comparisons | [[List](https://github.com/Li-Zn-H/AwesomeWorldModels)] |
-| 2026 | 3D/4D | [**3D and 4D World Modeling: A Survey**](https://arxiv.org/abs/2509.07996) | VideoGen / OccGen / LiDARGen × generative / predictive × geometric / action / semantic conditions × four functional roles | Establishes a native 3D/4D definition, multi-axis taxonomy, datasets, and metrics | [[Project](https://worldbench.github.io/survey)] [[List](https://github.com/worldbench/awesome-3d-4d-world-models)] |
-| 2026 | Video efficiency | [**Video Generation Models as World Models**](https://arxiv.org/abs/2603.28489) | efficient modeling / architecture / inference, including diffusion distillation, AR/hybrid, memory, attention, caching, pruning, and quantization | Makes efficiency a first-class prerequisite for interactive video world simulators | [[Paper](https://arxiv.org/abs/2603.28489)] |
-| 2025/26 | Simulators + embodied AI | [**Learning Embodied Intelligence from Physical Simulators and World Models**](https://arxiv.org/abs/2507.00917) | IR-L0–L4; simulators by physics/rendering/sensors; WMs as neural simulators / dynamics / reward models | Unifies external physical simulation and internal learned modeling across robots and driving | [[List](https://github.com/NJU3DV-LoongGroup/Embodied-World-Models-Survey)] |
-| 2024 | General WMs | [**Understanding World or Predicting Future?**](https://arxiv.org/abs/2411.14499) | understanding: internal representation / world knowledge; prediction: video generation / embodied environments; four application domains | Introduces the understanding-versus-prediction functional split and maps it across domains | [[List](https://github.com/tsinghua-fib-lab/World-Model)] |
-| 2024/25 | General WMs | [**Is Sora a World Simulator?**](https://arxiv.org/abs/2405.03520) | video generation / autonomous driving / autonomous agents; driving split into E2E and 2D/3D neural simulators | Connects generative world modeling to driving and autonomous-agent decision systems | [[List](https://github.com/GigaAI-research/General-World-Models-Survey)] |
-| 2024 | Safety | [**World Models: The Safety Perspective**](https://arxiv.org/abs/2411.07690) | RNN / Transformer / diffusion / other techniques; generated-scene and agent pathologies; safety agenda | Centers hallucination, trustworthiness, and high-priority safety problems for embodied agents | [[Proceedings](https://doi.org/10.1109/ISSREW63542.2024.00104)] |
-| 2026 | RL methodology | [**Reinforcement Learning: From Algorithms to Foundation Models**](https://arxiv.org/abs/2607.17560) | multi-agent games; diffusion WMs; efficient video generation; generative policies; interactive video WMs; memory | Princeton dissertation linking RL algorithms to foundation-model world modeling; retained as a methodological source, not a survey article | [[Thesis](https://arxiv.org/abs/2607.17560)] |
-
 ## Contents
 
 - [Autonomous driving background milestones](#autonomous-driving-background-milestones)
 - [Autonomous driving world model surveys](#autonomous-driving-world-model-surveys)
-- [Detailed survey comparison](SURVEY_COMPARISON.md)
-- [Full cross-repository catalog](#full-cross-repository-catalog)
 - [Scope and taxonomy](#scope-and-taxonomy)
 - [Core taxonomy](#core-taxonomy-world-models-by-future-state-representation)
   - [3.1.1 Future image and video](#311-observation-level-future-image-and-video)
@@ -92,6 +75,7 @@ These works contribute safety, embodied-AI, simulator, 3D/4D, general-world-mode
   - [3.3 Latent-space prediction](#33-latent-space-prediction)
 - [Rollout mechanisms](#rollout-mechanisms)
 - [System roles](#system-roles)
+- [Driving-related boundary literature](#driving-related-boundary-literature)
 - [Evaluation and benchmarks](#evaluation-and-benchmarks)
 - [Datasets](#datasets)
 - [Simulators and platforms](#simulators-and-platforms)
@@ -99,16 +83,6 @@ These works contribute safety, embodied-AI, simulator, 3D/4D, general-world-mode
 - [Workshops and challenges](#workshops-and-challenges)
 - [Related collections](#related-collections)
 - [Contributing and acknowledgements](#contributing-and-acknowledgements)
-
-## Full cross-repository catalog
-
-The [full reference catalog](FULL_REFERENCE_CATALOG.md) exhaustively extracts all bullets with explicit paper or report links from these requested sources, then deduplicates and reclassifies them under our paper outline:
-
-- [HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey](https://github.com/HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey)
-- [ChaofanTao/Autoregressive-Models-in-Vision-Survey](https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey)
-- [LMD0311/Awesome-World-Model](https://github.com/LMD0311/Awesome-World-Model)
-
-Every catalog entry exposes its Chapter 2 admission status, Chapter 3 representation category, Chapter 4 rollout mechanism, Chapter 5-7 roles, source repository, and available paper/code/project links. The accompanying [JSON dataset](data/reference_catalog.json) retains source sections and raw upstream entries for audit and future updates.
 
 ## Scope and taxonomy
 
@@ -119,7 +93,7 @@ We define a learned driving world model as an action-conditioned transition func
 
 Because the field still lacks a settled boundary, we also follow an inclusive author-definition rule: a paper that explicitly calls itself a world model and broadly satisfies both criteria is retained as a candidate, with its admission status exposed for audit.
 
-Pure video generation such as Sora, static NeRF/3DGS reconstruction, generic temporal prediction, perception-only VLMs, action-only VLAs, and E2E driving systems without a predictive world-model component are outside the core scope. Hand-engineered simulators such as CARLA are resources rather than learned world models. Robotics, games, Dreamer, V-JEPA, Genie, and autoregressive visual generation are retained as cross-domain origins or adjacent methodology, not mislabeled as driving world models.
+Pure video generation such as Sora, static NeRF/3DGS reconstruction, generic temporal prediction, perception-only VLMs, action-only VLAs, and E2E driving systems without a predictive world-model component are outside the core scope. Driving-specific examples may appear only in the clearly labeled boundary section when they directly support the review's scope discussion, data-engine analysis, or evaluation. Hand-engineered simulators such as CARLA are resources rather than learned world models. Unrelated robotics, games, and generic autoregressive visual generation are not retained.
 
 Each work has one primary home even when it spans several categories. We use the following compact vocabulary:
 
@@ -135,15 +109,14 @@ Resource labels: **P** = paper, **C** = code, **D** = data/model, **W** = websit
 <!-- CORE_TAXONOMY_START -->
 ## Core taxonomy: world models by future-state representation
 
-All 122 driving-world-model core and inclusive candidates are assigned one primary home below. Representative tables are full-text audited; compact entries retain metadata-based candidate labels pending paper-level verification. Titles link directly to papers. The [full 1,270-paper catalog](FULL_REFERENCE_CATALOG.md) also contains boundary work, evaluation, cross-domain foundations, and autoregressive-vision references.
+The 92 core candidates below are assigned one primary home by future-state representation. Papers that do not yet satisfy both admission criteria are listed separately as boundary literature. Representative tables are full-text audited; compact entries retain metadata-based candidate labels pending paper-level verification. Titles link directly to papers.
 
 - **Core candidate:** explicitly presented as a driving world model or selected as a review representative; final manuscript inclusion still follows our action/rollout criteria.
-- **Inclusive candidate:** retained for coverage, but action conditionality or recursive rollout is incomplete or needs further audit.
 - **Full-text audited / Metadata classified:** distinguishes paper-level verification from initial title, source-section, and metadata classification.
 
 ### 3.1.1 Observation-level: future image and video
 
-**22 candidates. Representative papers:**
+**17 core candidates. Representative papers:**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
@@ -153,60 +126,50 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 | [**Vista: A Generalizable Driving World Model with High Fidelity and Versatile Controllability**](https://proceedings.neurips.cc/paper_files/paper/2024/file/a6a066fb44f2fe0d36cf740c873b8890-Paper-Conference.pdf) [[Project](https://opendrivelab.com/Vista/)] [[Code](https://github.com/OpenDriveLab/Vista)] | HKUST + OpenDriveLab/Shanghai AI Lab + Tübingen + HKU; NeurIPS 2024 | Improves high-resolution, long-horizon visual rollout, cross-dataset generalization, and control from commands to trajectories. | Future video; command, goal point, trajectory, steering angle, and speed controls. | Latent diffusion with history replacement; simulator / action evaluation. | Large-scale mixed driving data; FID/FVD, human comparison, controllability, and action reward evaluation. |
 | [**DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT**](https://arxiv.org/abs/2412.19505) [[Project](https://huxiaotaostasy.github.io/DrivingWorld/index.html)] [[Code](https://github.com/YvanYin/DrivingWorld)] | HKUST + Horizon Robotics; arXiv 2024 | Introduces an efficient video-GPT design with spatial-temporal tokenization for controllable long driving-video generation. | Future video tokens; short video context and trajectory conditions. | Autoregressive next-token rollout; visual simulator. | nuScenes and OpenDV-2K; generation fidelity, temporal coherence, and trajectory control. |
 
-**Other core and inclusive candidates:**
+**Other core candidates:**
 
 - [**Toward Physically Consistent Driving Video World Models under Challenging Trajectories**](https://arxiv.org/abs/2603.24506) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://wm-research.github.io/PhyGenesis/)]
 - [**UniDrive-WM: Unified Understanding, Planning and Generation World Model For Autonomous Driving**](https://arxiv.org/abs/2601.04453) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://unidrive-wm.github.io/UniDrive-WM)]
 - [**X-Mind: Efficient Visual Chain-of-Thought via Predictive World Model for End-to-End Driving**](https://arxiv.org/abs/2606.28758) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**X-World: Controllable Ego-Centric Multi-Camera World Models for Scalable End-to-End Driving**](https://arxiv.org/abs/2603.19979) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Xiaomi EV World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving**](https://arxiv.org/abs/2605.18137) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**CVD-STORM: Cross-View Video Diffusion with Spatial-Temporal Reconstruction Model for Autonomous Driving**](https://arxiv.org/abs/2510.07944) (2025) — `Inclusive candidate` · `Metadata classified` · `Diffusion and flow-matching rollout`
 - [**EOT-WM Other Vehicle Trajectories Are Also Needed: A Driving World Model Unifies Ego-Other Vehicle Trajectories in Video Latant Space**](https://arxiv.org/abs/2503.09215) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**FSDrive FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving**](https://arxiv.org/abs/2505.17685) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/MIV-XJTU/FSDrive)]
 - [**GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving**](https://arxiv.org/abs/2503.20523) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency**](https://arxiv.org/abs/2506.07497) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://arxiv.org/abs/2506.07497)] [[Code](https://github.com/xiaomi-research/genesis)]
 - [**MaskGWM: A Generalizable Driving World Model with Video Mask Reconstruction**](https://arxiv.org/abs/2502.11663) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/SenseTime-FVG/OpenDWM)]
 - [**MiLA: Multi-view Intensive-fidelity Long-term Video Generation World Model for Autonomous Driving**](https://arxiv.org/abs/2503.15875) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://xiaomi-mlab.github.io/mila.github.io/)]
 - [**ProphetDWM: ProphetDWM: A Driving World Model for Rolling Out Future Actions and Videos**](https://arxiv.org/abs/2505.18650) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**World model-based end-to-end scene generation for accident anticipation in autonomous driving**](https://www.nature.com/articles/s44172-025-00474-7) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**DrivingGPT: Unifying Driving World Modeling and Planning with Multi-modal Autoregressive Transformers**](https://arxiv.org/abs/2412.18607) (2024) — `Core candidate` · `Metadata classified` · `Autoregressive rollout` [[Project](https://rogerchern.github.io/DrivingGPT/)]
-- [**MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control**](https://arxiv.org/abs/2411.13807) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://gaoruiyuan.com/magicdrive-v2/)]
-- [**Iso-Dream: Isolating and Leveraging Noncontrollable Visual Dynamics in World Models**](https://arxiv.org/pdf/2205.13817.pdf) (2022) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/panmt/iso-dream)] [[Code](https://github.com/panmt/Iso-Dream)]
 
 ### 3.1.2 Observation-level: future point cloud
 
-**3 candidates. Representative papers:**
+**2 core candidates. Representative papers:**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
-| [**ViDAR: Visual Point Cloud Forecasting enables Scalable Autonomous Driving**](https://arxiv.org/pdf/2312.17655) [[Code](https://github.com/OpenDriveLab/ViDAR)] | OpenDriveLab + Shanghai AI Lab; CVPR 2024 | Uses future point-cloud forecasting from historical camera images as a scalable predictive pretraining task. | Future LiDAR point clouds rendered from predicted BEV features; no substantive ego-action input. | Iterative latent BEV prediction and rendering; predictive pretraining. | nuScenes; point forecasting plus detection, tracking, mapping, occupancy, motion, and planning transfer. |
 | [**Copilot4D: Learning Unsupervised World Models for Autonomous Driving via Discrete Diffusion**](https://arxiv.org/abs/2311.01017) | Waabi + University of Toronto; ICLR 2024 | Tokenizes LiDAR observations with a VQ-VAE and predicts diverse future point clouds using discrete diffusion. | Future point-cloud observations; past LiDAR and estimated ego motion/action. | Discrete diffusion with temporal rollout; observation-level world modeling. | nuScenes, KITTI Odometry, and Argoverse 2; Chamfer distance at 1 s and 3 s and multi-future quality. |
 
-**Other core and inclusive candidates:**
+**Other core candidates:**
 
 - [**LiSTAR: Ray-Centric World Models for 4D LiDAR Sequences in Autonomous Driving**](https://arxiv.org/abs/2511.16049) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://ocean-luna.github.io/LiSTAR.github.io/)]
 
 ### 3.2.1 Scene-level: entities and interactions
 
-**8 candidates. Representative papers:**
+**4 core candidates. Representative papers:**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
 | [**TrafficBots: Towards World Models for Autonomous Driving Simulation and Motion Prediction**](https://arxiv.org/abs/2303.04116) [[Code](https://github.com/zhejz/TrafficBots)] | ETH Zürich + MPI Informatics + KU Leuven; ICRA 2023 | Formulates configurable multi-agent traffic simulation as a reactive entity-level world model. | Agent states and actions; player plan plus destinations and latent personalities for surrounding agents. | Shared recurrent/attention policy and dynamics update; neural traffic simulator. | Waymo Open Motion Dataset; motion prediction, joint rollout realism, diversity, and controllability. |
 | [**GUMP Solving Motion Planning Tasks with a Scalable Generative Model**](https://arxiv.org/abs/2407.02797) [[Code](https://github.com/HorizonRobotics/GUMP/)] | Horizon Robotics; ECCV 2024 | Provides scalable full- and partial-autoregressive agent simulation for scenario generation, policy evaluation, and planning. | Tokenized scene and agent states/actions; scene prompts and candidate policies. | Autoregressive entity/action rollout; simulator / planner evaluator. | Waymo Open Motion and nuPlan; simulation realism, generation, planning, and closed-loop evidence. |
 
-**Other core and inclusive candidates:**
+**Other core candidates:**
 
 - [**HEAT: Heterogeneous End-to-End Autonomous Driving via Trajectory-Guided World Models**](https://arxiv.org/abs/2605.19631) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**DriVerse: Navigation World Model for Driving Simulation via Multimodal Trajectory Prompting and Motion Alignment**](https://arxiv.org/pdf/2504.18576) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/shalfun/DriVerse)]
-- [**DriveGPT: Scaling Autoregressive Behavior Models for Driving**](https://arxiv.org/abs/2412.14415) (2024) — `Inclusive candidate` · `Metadata classified` · `Autoregressive rollout` [[Project](https://www.youtube.com/watch?v=-hLi44PfY8g)]
-- [**FipTR: A Simple yet Effective Transformer Framework for Future Instance Prediction in Autonomous Driving**](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11758.pdf) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/TabGuigui/FipTR)]
 - [**MARL-CCE Modelling Competitive Behaviors in Autonomous Driving Under Generative World Model**](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/05085.pdf) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/qiaoguanren/MARL-CCE)]
-- [**Symphony: Learning Realistic and Diverse Agents for Autonomous Driving Simulation**](https://arxiv.org/abs/2205.03195) (2022) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 
 ### 3.2.2 Scene-level: BEV, occupancy, and geometry
 
-**19 candidates. Representative papers:**
+**13 core candidates. Representative papers:**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
@@ -214,7 +177,7 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 | [**Drive-OccWorld: Driving in the Occupancy World: Vision-Centric 4D Occupancy Forecasting and Planning via World Models for Autonomous Driving**](https://arxiv.org/pdf/2408.14197) [[Project](https://drive-occworld.github.io/)] [[Code](https://github.com/yuyang-cloud/Drive-OccWorld)] | Zhejiang University + Huawei; AAAI 2025 | Adds flexible ego-action control and occupancy-based trajectory scoring to 4D occupancy forecasting. | Future occupancy and flow; velocity, steering, trajectory, and command conditions. | Memory-conditioned recurrent forecasting; planning-internal rollout. | nuScenes, nuScenes-Occupancy, and Lyft Level 5; mIoU/VPQ, controllability, and planning. |
 | [**HERMES: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation**](https://arxiv.org/pdf/2501.14729) [[Code](https://github.com/LMD0311/HERMES)] [[Project](https://lmd0311.github.io/HERMES/)] | HUST + MEGVII + Mach Drive + HKU; ICCV 2025 | Unifies 3D scene understanding and action-conditioned future scene generation through shared geometric tokens and an LLM. | Future 3D scene tokens plus language understanding; images, geometric tokens, and action sequences. | Autoregressive token generation; unified understanding / generation. | nuScenes and OmniDrive-nuScenes; generation metrics and language/scene-understanding benchmarks. |
 
-**Other core and inclusive candidates:**
+**Other core candidates:**
 
 - [**HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation**](https://arxiv.org/abs/2604.28196) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/H-EmbodVis/HERMESV2)] [[Project](https://h-embodvis.github.io/HERMESV2/)]
 - [**OWMDrive: Causality-Aware End-to-End Autonomous Driving via 4D Occupancy World Model**](https://arxiv.org/abs/2606.30421) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
@@ -222,20 +185,14 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 - [**GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation**](https://arxiv.org/abs/2512.23180) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/dtc111111/GaussianDWM)]
 - [**GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation**](https://arxiv.org/abs/2512.12751) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://huster-yzy.github.io/geniedrive_project_page/)]
 - [**GeoDrive: 3D Geometry-Informed Driving World Model with Precise Action Control**](https://arxiv.org/abs/2505.22421) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/antonioo-c/GeoDrive)]
-- [**LOPR: Self-supervised Multi-future Occupancy Forecasting for Autonomous Driving**](https://www.roboticsproceedings.org/rss21/p003.pdf) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**NRSeg: Noise-Resilient Learning for BEV Semantic Segmentation via Driving World Models**](https://arxiv.org/abs/2507.04002) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/lynn-yu/NRSeg)]
 - [**PreWorld: Semi-Supervised Vision-Centric 3D Occupancy World Model for Autonomous Driving**](https://arxiv.org/abs/2502.07309) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/getterupper/PreWorld)]
-- [**SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model**](https://arxiv.org/abs/2511.22039) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**UniFuture: A 4D Driving World Model for Future Generation and Perception**](https://arxiv.org/abs/2503.13587) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/dk-liang/UniFuture)] [[Project](https://dk-liang.github.io/UniFuture/)]
-- [**Vision-Centric 4D Occupancy Forecasting and Planning via Implicit Residual World Models**](https://arxiv.org/abs/2510.16729) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**DOME: Taming Diffusion Model into High-Fidelity Controllable Occupancy World Model**](https://arxiv.org/abs/2410.10429) (2024) — `Inclusive candidate` · `Metadata classified` · `Diffusion and flow-matching rollout` [[Project](https://gusongen.github.io/DOME)]
 - [**OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving**](https://www.arxiv.org/abs/2409.03272) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**MagicDrive: Street View Generation with Diverse 3D Geometry Control**](https://arxiv.org/abs/2310.02601) (2023) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/cure-lab/MagicDrive)]
-- [**Occupancy Prediction-Guided Neural Planner for Autonomous Driving**](https://arxiv.org/abs/2305.03303) (2023) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 
 ### 3.3 Latent-space prediction
 
-**70 candidates. Representative papers:**
+**56 core candidates. Representative papers:**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
@@ -243,24 +200,20 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 | [**Think2Drive: Efficient Reinforcement Learning by Thinking with Latent World Model for Autonomous Driving (in CARLA-v2)**](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/06129.pdf) [[Project](https://thinklab-sjtu.github.io/CornerCaseRepo/)] | Shanghai Jiao Tong University; ECCV 2024 | Uses a compact latent simulator to train a neural planner efficiently for corner-case-heavy CARLA Leaderboard v2. | Latent environment transition and reward; compact observations and driving controls. | Dreamer-style latent dynamics and model-based RL; planner training. | CARLA Leaderboard v2 and CornerCaseRepo; route completion, infractions, scenario density, and training efficiency. |
 | [**DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving**](https://arxiv.org/pdf/2405.04390) | Peking University-led multi-institution team; CVPR 2024 | Pretrains a 4D driving representation with dynamic memory and static-scene propagation in a memory state-space model. | Future latent BEV/occupancy state and action reconstruction; historical multiview images and expert actions. | Memory state-space latent prediction; predictive pretraining. | OpenScene and nuScenes; detection, mapping, tracking, forecasting, occupancy, and planning transfer. |
 | [**LAW: Enhancing End-to-End Autonomous Driving with Latent World Model**](https://arxiv.org/abs/2406.08481) [[Code](https://github.com/BraveGroup/LAW)] | CASIA + UCAS; ICLR 2025 | Adds an ego-trajectory-conditioned future-feature prediction objective to end-to-end driving planners. | Future scene latent feature; current feature and ego trajectory. | Latent feature transition; planning / predictive representation learning. | nuScenes, NAVSIM, and closed-loop CARLA; planning error, collision, and driving performance. |
-| [**AD-L-JEPA: Self-Supervised Spatial World Models with Joint Embedding Predictive Architecture for Autonomous Driving with LiDAR Data**](https://arxiv.org/abs/2501.04969) [[Code](https://github.com/HaoranZhuExplorer/AD-L-JEPA-Release)] | New York University; arXiv v2 2025 | Introduces non-generative JEPA pretraining that predicts masked BEV embeddings from automotive LiDAR. | Masked BEV latent embeddings; LiDAR input, without ego-action-conditioned rollout. | JEPA latent prediction; predictive pretraining / methodological boundary. | KITTI3D, Waymo, and ONCE; 3D detection transfer, GPU time, and memory efficiency. |
 
-**Other core and inclusive candidates:**
+**Other core candidates:**
 
 - [**Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving**](https://arxiv.org/abs/2607.29031) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**CausalDrive: Real-time Causal World Models for Autonomous Driving**](https://arxiv.org/abs/2606.15341) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving**](https://arxiv.org/abs/2605.10426) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**Diffusion Transformer World-Action Model for AV Scene Prediction**](https://arxiv.org/abs/2606.12987) (2026) — `Inclusive candidate` · `Metadata classified` · `Diffusion and flow-matching rollout`
 - [**DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving**](https://arxiv.org/abs/2603.24587) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**Driver-WM: A Driver-Centric Traffic-Conditioned Latent World Model for In-Cabin Dynamics Rollout**](https://arxiv.org/abs/2605.05092) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
-- [**DynVLA: Learning World Dynamics for Action Reasoning in Autonomous Driving**](https://arxiv.org/abs/2603.11041) (2026) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation**](https://arxiv.org/abs/2607.13410) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Geographic Diversity Beats Data Volume for Cross-Domain Generalization in Zero-Label JEPA Driving World Models**](https://arxiv.org/abs/2607.04500) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving**](https://arxiv.org/abs/2606.16274) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving**](https://arxiv.org/abs/2607.20988) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Is Energy Guidance All You Need? Training-Free Norm Injection for Driving World Models**](https://arxiv.org/abs/2607.10781) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Kinematics-Aware Latent World Models for Data-Efficient Autonomous Driving**](https://arxiv.org/abs/2603.07264) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
-- [**Long-term Traffic Simulation via Structured Autoregressive Modeling**](https://arxiv.org/abs/2606.31209) (2026) — `Inclusive candidate` · `Metadata classified` · `Autoregressive rollout`
 - [**LWDrive: Layer-Wise World-Model-Guided Vision-Language Model Planning for Autonomous Driving**](https://arxiv.org/abs/2606.29879) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**M4World: A Multi-view Multimodal Driving World Model for Interactive Object Manipulation and Minute-long Streaming**](https://arxiv.org/abs/2607.14005) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**MAD: Motion Appearance Decoupling for efficient Driving World Models**](https://arxiv.org/abs/2601.09452) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://vita-epfl.github.io/MAD-World-Model/)]
@@ -268,7 +221,6 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 - [**OmniDrive: An LLM-Choreographed Multi-Agent World Model with Unified Latent Co-Compression for Multi-View Driving Video Generation**](https://arxiv.org/abs/2606.17536) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**PLAN-S: Bridging Planning with Latent Style Dynamics for Autonomous Driving World Models**](https://arxiv.org/abs/2606.06014) (2026) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving**](https://arxiv.org/abs/2602.10884) (2026) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/mengtan00/ResWorld.git)]
-- [**WorldDrive Bridging Scene Generation and Planning: Driving with World Model via Unifying Vision and Motion Representation**](https://arxiv.org/abs/2603.14948) (2026) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/TabGuigui/WorldDrive)]
 - [**AD-R1: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving with Impartial World Models**](https://arxiv.org/abs/2511.20325) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**AdaWM: Adaptive World Model based Planning for Autonomous Driving**](https://arxiv.org/abs/2501.13072) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving**](https://arxiv.org/abs/2510.12560) (2025) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
@@ -276,7 +228,6 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 - [**Dream4Drive Rethinking Driving World Model as Synthetic Data Generator for Perception Tasks**](https://arxiv.org/abs/2510.19195) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://wm-research.github.io/Dream4Drive/)]
 - [**DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving**](https://arxiv.org/abs/2510.12796) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Epona: Autoregressive Diffusion World Model for Autonomous Driving**](https://arxiv.org/abs/2506.24113) (2025) — `Core candidate` · `Metadata classified` · `Hybrid generative rollout` [[Code](https://github.com/Kevin-thu/Epona/)]
-- [**From Forecasting to Planning: Policy World Model for Collaborative State-Action Prediction**](https://arxiv.org/abs/2510.19654) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/6550Zhao/Policy-World-Model)]
 - [**InDRiVE: Intrinsic Disagreement-based Reinforcement for Vehicle Exploration through Curiosity-Driven Generalized World Model**](https://arxiv.org/abs/2503.05573) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**InDRiVE: Reward-Free World-Model Pretraining for Autonomous Driving via Latent Disagreement**](https://arxiv.org/abs/2512.18850) (2025) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving**](https://arxiv.org/abs/2512.10226) (2025) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
@@ -284,15 +235,11 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 - [**MindDrive: An All-in-One Framework Bridging World Models and Vision-Language Model for End-to-End Autonomous Driving**](https://arxiv.org/abs/2512.04441) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Orbis: Overcoming Challenges of Long-Horizon Prediction in Driving World Models**](https://arxiv.org/abs/2507.13162) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://lmb-freiburg.github.io/orbis.github.io/)]
 - [**Raw2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving (in CARLA v2)**](https://arxiv.org/pdf/2505.16394) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**ReSim: Reliable World Simulation for Autonomous Driving**](https://arxiv.org/abs/2506.09981) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://opendrivelab.com/ReSim)]
 - [**SceneDiffuser++: City-Scale Traffic Simulation via a Generative World Model**](https://openaccess.thecvf.com/content/CVPR2025/html/Tan_SceneDiffuser_City-Scale_Traffic_Simulation_via_a_Generative_World_Model_CVPR_2025_paper.html) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**Think Before You Drive: World Model-Inspired Multimodal Grounding for Autonomous Vehicles**](https://arxiv.org/abs/2512.03454) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**UMGen Generating Multimodal Driving Scenes via Next-Scene Prediction**](https://arxiv.org/abs/2503.14945) (2025) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://yanhaowu.github.io/UMGen/)] [[Code](https://github.com/YanhaoWu/UMGen/)]
 - [**Vehicle Dynamics Embedded World Models for Autonomous Driving**](https://arxiv.org/abs/2512.02417) (2025) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving**](https://arxiv.org/abs/2512.06112) (2025) — `Inclusive candidate` · `Metadata classified` · `Diffusion and flow-matching rollout` [[Code](https://github.com/fudan-generative-vision/WAM-Flow)]
 - [**World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model**](https://arxiv.org/abs/2507.00603) (2025) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Code](https://github.com/ucaszyp/World4Drive)]
 - [**WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving**](https://arxiv.org/abs/2512.19133) (2025) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
-- [**3D-VLA: A 3D Vision-Language-Action Generative World Model**](https://arxiv.org/pdf/2403.09631.pdf) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**AdaptiveDriver Planning with Adaptive World Models for Autonomous Driving**](https://arxiv.org/pdf/2406.10714) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://arunbalajeev.github.io/world_models_planning/world_model_paper.html)]
 - [**BEVWorld: A Multimodal World Model for Autonomous Driving via Unified BEV Latent Space**](https://arxiv.org/abs/2407.05679) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Code](https://github.com/zympsyche/BevWorld)]
 - [**CarDreamer: Open-Source Learning Platform for World Model based Autonomous Driving**](https://arxiv.org/abs/2405.09111) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Code](https://github.com/ucd-dare/CarDreamer)]
@@ -300,20 +247,15 @@ All 122 driving-world-model core and inclusive candidates are assigned one prima
 - [**DriveDreamer-2: LLM-Enhanced World Models for Diverse Driving Video Generation**](https://arxiv.org/pdf/2403.06845) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Project](https://drivedreamer2.github.io/)] [[Code](https://github.com/f1yfisher/DriveDreamer2)]
 - [**DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation**](https://arxiv.org/pdf/2410.13571) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Project](https://drivedreamer4d.github.io/)] [[Code](https://github.com/GigaAI-research/DriveDreamer4D)]
 - [**DrivePhysica Physical Informed Driving World Model**](https://arxiv.org/abs/2412.08410) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**GEM: A Generalizable Ego-Vision Multimodal World Model for Fine-Grained Ego-Motion, Object Dynamics, and Scene Composition Control**](https://arxiv.org/pdf/2412.11198) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/vita-epfl/GEM)] [[Project](https://vita-epfl.github.io/GEM.github.io/)]
-- [**GenAD: Generalized Predictive Model for Autonomous Driving**](https://arxiv.org/pdf/2403.09630.pdf) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/OpenDriveLab/DriveAGI)] [[Dataset](https://github.com/OpenDriveLab/DriveAGI?tab=readme-ov-file#genad-dataset-opendv-youtube)]
 - [**Imagine-2-Drive: High-Fidelity World Modeling in CARLA for Autonomous Vehicles**](https://arxiv.org/abs/2411.10171) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://anantagrg.github.io/Imagine-2-Drive.github.io/)]
 - [**InfinityDrive: Breaking Time Limits in Driving World Models**](https://arxiv.org/abs/2412.01522v1) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Project](https://metadrivescape.github.io/papers_project/InfinityDrive/page.html)]
 - [**LatentDriver Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving**](https://arxiv.org/abs/2409.15730) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Code](https://github.com/Sephirex-X/LatentDriver)]
 - [**Mitigating Covariate Shift in Imitation Learning for Autonomous Vehicles Using Latent Space Generative World Models**](https://arxiv.org/abs/2409.16663) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**RAMBLE From Imitation to Exploration: End-to-end Autonomous Driving based on World Model**](https://arxiv.org/abs/2410.02253) (2024) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/SCP-CN-001/rambler)]
 - [**ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration**](https://arxiv.org/abs/2411.19548) (2024) — `Core candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA` [[Project](https://recondreamer.github.io/)] [[Code](https://github.com/GigaAI-research/ReconDreamer)]
-- [**SceneDiffuser: Efficient and Controllable Driving Simulation Initialization and Rollout**](https://arxiv.org/abs/2412.12129) (2024) — `Inclusive candidate` · `Metadata classified` · `Generative rollout (unspecified)`
 - [**ADriver-I: A General World Model for Autonomous Driving**](https://arxiv.org/pdf/2311.13549.pdf) (2023) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)`
-- [**CTT Categorical Traffic Transformer: Interpretable and Diverse Behavior Prediction with Tokenized Latent**](https://arxiv.org/abs/2311.18307) (2023) — `Inclusive candidate` · `Metadata classified` · `Latent dynamics / state-space / JEPA`
 - [**UniWorld: Autonomous Driving Pre-training via World Models**](https://arxiv.org/abs/2308.07234) (2023) — `Core candidate` · `Metadata classified` · `Generative rollout (unspecified)` [[Code](https://github.com/whuhxb/UniWorld)]
 
-For source provenance, role tags, and generated cross-domain appendices, see the [full catalog](FULL_REFERENCE_CATALOG.md#driving-world-models-core-and-inclusive-candidates).
 <!-- CORE_TAXONOMY_END -->
 
 ## Rollout mechanisms
@@ -328,7 +270,7 @@ This is the Chapter 4 cross-index: representation remains the primary home of ea
 | Flow matching | [WAM-Flow](https://arxiv.org/abs/2512.06112), [WorldRFT](https://arxiv.org/abs/2512.19133) | continuous or discrete transport for efficient multimodal generation/planning | limited closed-loop evidence and solver/schedule sensitivity |
 | Hybrid / multi-stage | [GAIA-1](https://arxiv.org/abs/2309.17080), [Vista](https://arxiv.org/abs/2405.17398), [HERMES](https://arxiv.org/abs/2501.14729), [UniFuture](https://arxiv.org/abs/2503.13587) | combinations of token prediction, diffusion decoding, geometry, semantics, or planners | interface mismatch and difficult end-to-end attribution |
 
-Fixed-horizon prediction and recursive rollout are recorded separately in the [full catalog](FULL_REFERENCE_CATALOG.md): a strong one-step metric does not establish a credible rollout horizon. The shared audit targets are accumulated error, distribution shift, geometric drift, identity instability, action-response decay, and the absence of a standardized trustworthy-horizon protocol.
+Fixed-horizon prediction and recursive rollout must be distinguished: a strong one-step metric does not establish a credible rollout horizon. The shared audit targets are accumulated error, distribution shift, geometric drift, identity instability, action-response decay, and the absence of a standardized trustworthy-horizon protocol.
 
 ## System roles
 
@@ -359,6 +301,81 @@ Fixed-horizon prediction and recursive rollout are recorded separately in the [f
 - [**DriveWorld**](https://arxiv.org/abs/2405.04390) - 4D pretraining for scene understanding.
 - [**AD-L-JEPA**](https://arxiv.org/abs/2501.04969) - self-supervised spatial predictive learning for LiDAR. [[Code](https://github.com/HaoranZhuExplorer/AD-L-JEPA-Release)]
 
+## Driving-related boundary literature
+
+These papers are relevant to the review but are **not counted as core driving world models** unless their action conditioning and recursive state rollout are subsequently verified. They are retained because they define the Chapter 2 boundary or directly support the data-engine and system-role discussion; unrelated general vision and robotics papers have been removed.
+
+### Driving generation and data engines
+
+- [**FAR-Drive: Frame-AutoRegressive Video Generation in Closed-Loop Autonomous Driving**](https://arxiv.org/abs/2603.14938) (2026)
+- [**ForgeDrive: Bidirectional Cross-Conditioning for Unified Visual-Action Generation in Autonomous Driving**](https://arxiv.org/abs/2606.31226) (2026)
+- [**CoGen: 3D Consistent Video Generation via Adaptive Conditioning for Autonomous Driving**](https://arxiv.org/abs/2503.22231) (2025)
+- [**DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving**](https://arxiv.org/abs/2505.19239) (2025)
+- [**LSD-3D: Large-Scale 3D Driving Scene Generation with Geometry Grounding**](https://arxiv.org/abs/2508.19204) (2025)
+- [**OmniGen: Unified Multimodal Sensor Generation for Autonomous Driving**](https://arxiv.org/abs/2512.14225) (2025)
+- [**OpenTwinMap: An Open-Source Digital Twin Generator for Urban Autonomous Driving**](https://arxiv.org/abs/2511.21925) (2025)
+- [**UniSceneV2: Scaling Up Occupancy-centric Driving Scene Generation**](https://arxiv.org/abs/2510.22973) (2025)
+- [**VaViM and VaVAM: Autonomous Driving through Video Generative Modeling**](https://arxiv.org/abs/2502.15672) (2025)
+- [**DrivingDojo Dataset**](https://proceedings.neurips.cc/paper_files/paper/2024/file/178f4666a84ecdd61e3b85145ed56484-Paper-Datasets_and_Benchmarks_Track.pdf) (2024)
+- [**HoloDrive: Holistic 2D-3D Multi-Modal Street Scene Generation**](https://arxiv.org/abs/2412.01407) (2024)
+- [**InfiniCube: Unbounded and Controllable Dynamic 3D Driving Scene Generation**](https://arxiv.org/abs/2412.03934) (2024)
+- [**MagicDrive3D: Controllable 3D Generation for Any-View Rendering in Street Scenes**](https://arxiv.org/abs/2405.14475) (2024)
+- [**OccSora: 4D Occupancy Generation Models as World Simulators**](https://arxiv.org/abs/2405.20337) (2024)
+- [**SimGen: Simulator-conditioned Driving Scene Generation**](https://arxiv.org/abs/2406.09386) (2024)
+- [**SubjectDrive: Scaling Generative Data in Autonomous Driving via Subject Control**](https://arxiv.org/abs/2403.19438) (2024)
+- [**UniMLVG: Multi-view Long Video Generation for Autonomous Driving**](https://arxiv.org/abs/2412.04842) (2024)
+- [**UniScene: Unified Occupancy-centric Driving Scene Generation**](https://arxiv.org/abs/2412.05435) (2024)
+- [**DrivingDiffusion**](https://arxiv.org/abs/2310.07771) (2023)
+- [**Panacea: Panoramic and Controllable Video Generation for Autonomous Driving**](https://arxiv.org/abs/2311.16813) (2023)
+- [**WoVoGen: World Volume-aware Multi-camera Driving Scene Generation**](https://arxiv.org/abs/2312.02934) (2023)
+
+### Planning, VLA, and predictive boundaries
+
+- [**Diffusion Transformer World-Action Model for AV Scene Prediction**](https://arxiv.org/abs/2606.12987) (2026)
+- [**Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving**](https://arxiv.org/abs/2601.22032) (2026)
+- [**DynVLA: Learning World Dynamics for Action Reasoning in Autonomous Driving**](https://arxiv.org/abs/2603.11041) (2026)
+- [**GeoWorldAD: Geometry World Action Model for Autonomous Driving**](https://arxiv.org/abs/2607.17521) (2026)
+- [**Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving**](https://arxiv.org/abs/2603.24581) (2026)
+- [**Long-term Traffic Simulation via Structured Autoregressive Modeling**](https://arxiv.org/abs/2606.31209) (2026)
+- [**Risk-Aware World Model Predictive Control for End-to-End Autonomous Driving**](https://arxiv.org/abs/2602.23259) (2026)
+- [**See Tomorrow, Act Today: Foresight-Driven Autonomous Driving**](https://arxiv.org/abs/2605.07195) (2026)
+- [**WCog-VLA: A World-Cognitive VLA for End-to-End Autonomous Driving**](https://arxiv.org/abs/2607.08375) (2026)
+- [**WorldDrive: Unifying Vision and Motion Representation**](https://arxiv.org/abs/2603.14948) (2026)
+- [**DriVerse: Navigation World Model for Driving Simulation**](https://arxiv.org/abs/2504.18576) (2025)
+- [**Policy World Model for Collaborative State-Action Prediction**](https://arxiv.org/abs/2510.19654) (2025)
+- [**ImagiDrive: A Unified Imagination-and-Planning Framework**](https://arxiv.org/abs/2508.11428) (2025)
+- [**ReSim: Reliable World Simulation for Autonomous Driving**](https://arxiv.org/abs/2506.09981) (2025)
+- [**UMGen: Multimodal Driving Scenes via Next-Scene Prediction**](https://arxiv.org/abs/2503.14945) (2025)
+- [**WAM-Flow: Motion Planning via Discrete Flow Matching**](https://arxiv.org/abs/2512.06112) (2025)
+- [**3D-VLA: A 3D Vision-Language-Action Generative World Model**](https://arxiv.org/abs/2403.09631) (2024)
+- [**CarFormer: Self-Driving with Learned Object-Centric Representations**](https://arxiv.org/abs/2407.15843) (2024)
+- [**DriveGPT: Scaling Autoregressive Behavior Models for Driving**](https://arxiv.org/abs/2412.14415) (2024)
+- [**FipTR: Future Instance Prediction in Autonomous Driving**](https://arxiv.org/abs/2404.12867) (2024)
+- [**GEM: Controllable Ego-Vision Multimodal World Model**](https://arxiv.org/abs/2412.11198) (2024)
+- [**GenAD: Generalized Predictive Model for Autonomous Driving**](https://arxiv.org/abs/2403.09630) (2024)
+- [**SceneDiffuser: Driving Simulation Initialization and Rollout**](https://arxiv.org/abs/2412.12129) (2024)
+- [**TOKEN: Object-level Knowledge for Long-tail Autonomous Driving**](https://arxiv.org/abs/2407.00959) (2024)
+- [**CTT: Categorical Traffic Transformer**](https://arxiv.org/abs/2311.18307) (2023)
+- [**Hierarchical Model-Based Imitation Learning for Planning in Autonomous Driving**](https://arxiv.org/abs/2210.09539) (2022)
+- [**Separating the World and Ego Models for Self-Driving**](https://arxiv.org/abs/2204.07184) (2022)
+
+### Prediction and generation near the admission boundary
+
+- [**CVD-STORM: Cross-View Video Diffusion for Autonomous Driving**](https://arxiv.org/abs/2510.07944) (2025)
+- [**FSDrive: Thinking Visually with Spatio-Temporal CoT**](https://arxiv.org/abs/2505.17685) (2025)
+- [**Genesis: Multimodal Driving Scene Generation**](https://arxiv.org/abs/2506.07497) (2025)
+- [**LOPR: Self-supervised Multi-future Occupancy Forecasting**](https://arxiv.org/abs/2503.23125) (2025)
+- [**SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model**](https://arxiv.org/abs/2511.22039) (2025)
+- [**Vision-Centric 4D Occupancy Forecasting via Implicit Residual World Models**](https://arxiv.org/abs/2510.16729) (2025)
+- [**DOME: Controllable Occupancy World Model**](https://arxiv.org/abs/2410.10429) (2024)
+- [**MagicDrive-V2: Long Driving-Video Generation with Adaptive Control**](https://arxiv.org/abs/2411.13807) (2024)
+- [**ViDAR: Visual Point Cloud Forecasting**](https://arxiv.org/abs/2312.17655) (2024)
+- [**AD-L-JEPA: LiDAR Joint-Embedding Predictive Architecture**](https://arxiv.org/abs/2501.04969) (2025)
+- [**MagicDrive: Street-View Generation with 3D Geometry Control**](https://arxiv.org/abs/2310.02601) (2023)
+- [**Occupancy Prediction-Guided Neural Planner**](https://arxiv.org/abs/2305.03303) (2023)
+- [**Symphony: Realistic and Diverse Agents for Driving Simulation**](https://arxiv.org/abs/2205.03195) (2022)
+- [**Iso-Dream: Isolating Noncontrollable Visual Dynamics**](https://arxiv.org/abs/2205.13817) (2022)
+
 ## Evaluation and benchmarks
 
 No single score establishes that a model is a useful driving world model. This index mirrors Chapter 6 by separating appearance, geometry, action response, rollout, and downstream utility.
@@ -372,7 +389,7 @@ No single score establishes that a model is a useful driving world model. This i
 | Reactive and closed-loop behavior | collision, route completion, infractions, realism, diversity, policy response, credible rollout horizon | [SimWorld](https://arxiv.org/abs/2503.13952), [WorldLens](https://arxiv.org/abs/2512.10958), [ReactSim-Bench](https://arxiv.org/abs/2606.14058) |
 | Planning and policy utility | open/closed-loop planning scores, policy ranking, downstream transfer and sample efficiency | [WoTE](https://arxiv.org/abs/2504.01941), [Drive&Gen](https://arxiv.org/abs/2510.06209), [Scalable Policy Evaluation with Video World Models](https://arxiv.org/abs/2511.11520) |
 
-The [full catalog evaluation index](FULL_REFERENCE_CATALOG.md#chapter-6---evaluation-protocols-and-metrics) retains all extracted evaluation papers. Appearance-only metrics should not be treated as evidence of action sensitivity, physical correctness, or closed-loop safety.
+Additional driving-specific evaluation references include [DrivingGen](https://arxiv.org/abs/2601.01528), [DiST-4D](https://arxiv.org/abs/2503.15208), [ORAD-3D](https://arxiv.org/abs/2510.16500), [NeMo](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02571.pdf), and [MUVO](https://arxiv.org/abs/2311.11762). Appearance-only metrics should not be treated as evidence of action sensitivity, physical correctness, or closed-loop safety.
 
 ## Datasets
 
@@ -408,7 +425,7 @@ This Chapter 7 resource map separates measurable assurance questions from broad 
 | Sim-to-real and validation | [DriveCtrl](https://arxiv.org/abs/2605.15116), [TeraSim-World](https://arxiv.org/abs/2509.13164), [WorldLens](https://arxiv.org/abs/2512.10958) | Which simulated improvements survive real sensor, dynamics, and traffic distributions? |
 | Runtime engineering and assurance | [Video Generation Models as World Models](https://arxiv.org/abs/2603.28489), [World Models: The Safety Perspective](https://arxiv.org/abs/2411.07690) | Are latency, memory, energy, fallback, traceability, update control, and revalidation acceptable on vehicle hardware? |
 
-Open engineering evidence still includes calibrated credible horizons, physical-constraint monitors, distribution-shift alarms, deterministic fallback behavior, hardware latency/memory/energy measurements, sim-to-real validation, traceable data/model versions, and post-update safety cases. The [full deployment and assurance index](FULL_REFERENCE_CATALOG.md#chapter-7---deployment-trustworthiness-and-safety) retains all 38 extracted references, including cross-domain methodological work.
+Open engineering evidence still includes calibrated credible horizons, physical-constraint monitors, distribution-shift alarms, deterministic fallback behavior, hardware latency/memory/energy measurements, sim-to-real validation, traceable data/model versions, and post-update safety cases. Additional driving-specific resources include [Model-Predictive Policy Learning with Uncertainty Regularization](https://github.com/Atcold/pytorch-PPUU) and [SEM2](https://arxiv.org/abs/2210.04017); unrelated safety papers from other domains are excluded.
 
 ## Workshops and challenges
 

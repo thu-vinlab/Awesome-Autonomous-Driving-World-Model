@@ -40,23 +40,13 @@ Omit labels that are unavailable. Use the publication venue when confirmed; othe
 
 Corrections to metadata, broken links, categorization, and scope are as valuable as new entries. For changes affecting many entries, please open an issue first so the organization can be discussed before substantial work is done.
 
-## Updating the survey comparison
+## Updating the collection
 
-When adding or correcting a survey, update both the compact README index and `SURVEY_COMPARISON.md`. Record the authors, paper-level affiliations, verified publication status, scope, the authors' own detailed taxonomy, core contributions, evaluation/deployment coverage, companion resources, and the difference from this repository's framework. Preserve the survey authors' taxonomy levels rather than replacing them with our categories. Cite a preprint as a preprint until a publisher or DOI record confirms publication, and state the evidence limitation when the full text or affiliations cannot be verified.
+`README.md` is the single literature collection. When adding or correcting a survey, record the authors or team, verified publication status, the authors' own taxonomy, core contribution, and difference from this repository's framework. Preserve the survey authors' taxonomy rather than replacing it with ours. Cite a preprint as a preprint until a publisher or DOI confirms publication.
 
-Historical background citations belong in `AD_BACKGROUND_MILESTONES.md`, not in the core world-model categories, unless the work also provides an action-conditioned and recursively iterable learned transition model.
+Historical background citations belong in the milestone table, not in the Core Taxonomy, unless the work also provides an action-conditioned and recursively iterable learned transition model. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
 
-## Updating the full catalog
-
-`FULL_REFERENCE_CATALOG.md` and `data/reference_catalog.json` are generated files. Clone or update the three source repositories named in the catalog as sibling directories of this repository, then run:
-
-```shell
-ruby scripts/build_full_catalog.rb
-```
-
-Commit the generator and both generated outputs together. Review changes to admission status and Chapter 3 representation manually; titles and upstream section names cannot replace checking the actual action input, predicted state, loss, and rollout procedure.
-
-The Core Taxonomy block in `README.md` is also generated between `CORE_TAXONOMY_START` and `CORE_TAXONOMY_END`; edit the generator rather than that block. Every catalog item must retain an audit label:
+Every core item must retain an audit label:
 
 - **Metadata classified:** initially organized from title, abstract/metadata, and upstream context; this is not a claim of full-paper review.
 - **Full-text audited:** the paper's predicted state, action conditioning, rollout procedure, loss, role, and evidence have been checked in the full text.
