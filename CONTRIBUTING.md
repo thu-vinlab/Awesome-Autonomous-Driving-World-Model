@@ -15,14 +15,14 @@ We inclusively retain papers whose authors explicitly identify them as world mod
 
 1. Search the README for the paper title, method name, and arXiv identifier.
 2. Choose one primary category, even if the work spans multiple categories.
-3. Use an official paper page and the authors' official project or repository.
+3. Link the paper title directly to an official paper or publisher page, then add the authors' official project or repository when available.
 4. Verify that every new link is public and resolves without a login.
 5. Keep the description factual and limited to one sentence.
 
 Use this entry format:
 
 ```markdown
-- **Method** (Venue Year) - concise statement of the world-model contribution. [[P](paper-url)] [[C](code-url)] [[D](data-or-model-url)] [[W](project-url)]
+- [**Paper title**](paper-url) (Venue Year) - concise statement of the world-model contribution. [[C](code-url)] [[D](data-or-model-url)] [[W](project-url)]
 ```
 
 Omit labels that are unavailable. Use the publication venue when confirmed; otherwise use the public preprint year. Do not describe an unaccepted paper as appearing at a venue.
@@ -33,6 +33,7 @@ Omit labels that are unavailable. Use the publication venue when confirmed; othe
 - [ ] The entry is not already present.
 - [ ] The title, venue, year, and links match the primary source.
 - [ ] The work appears in one primary category.
+- [ ] Rollout mechanism and system role are recorded as cross-cutting tags, not duplicate primary entries.
 - [ ] The description does not make unsupported comparative claims.
 - [ ] The README table of contents still works if a heading changed.
 - [ ] The link-check workflow passes, or the PR explains a site that blocks automated checks.
@@ -54,3 +55,10 @@ ruby scripts/build_full_catalog.rb
 ```
 
 Commit the generator and both generated outputs together. Review changes to admission status and Chapter 3 representation manually; titles and upstream section names cannot replace checking the actual action input, predicted state, loss, and rollout procedure.
+
+The Core Taxonomy block in `README.md` is also generated between `CORE_TAXONOMY_START` and `CORE_TAXONOMY_END`; edit the generator rather than that block. Every catalog item must retain an audit label:
+
+- **Metadata classified:** initially organized from title, abstract/metadata, and upstream context; this is not a claim of full-paper review.
+- **Full-text audited:** the paper's predicted state, action conditioning, rollout procedure, loss, role, and evidence have been checked in the full text.
+
+Only full-text-audited, field-representative papers should enter the detailed representative tables. Other works remain compact entries until audited.
