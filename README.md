@@ -10,7 +10,7 @@ Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It 
 
 > **Last updated:** August 2026. This is a living list, not a claim of completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
 
-**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). See also the [survey-by-survey comparison of teams, publication status, original taxonomies, scope, evaluation, deployment, and differences from our framework](SURVEY_COMPARISON.md). The compact README below remains the expert-curated entry point.
+**Full literature audit:** [1,000+ cross-repository references reclassified by the review outline](FULL_REFERENCE_CATALOG.md), with a machine-readable [provenance dataset](data/reference_catalog.json). See also the [survey-by-survey comparison of teams, publication status, detailed original taxonomies, core contributions, scope, evaluation, deployment, and differences from our framework](SURVEY_COMPARISON.md). The compact README below remains the expert-curated entry point.
 
 ## Autonomous driving background milestones
 
@@ -18,11 +18,11 @@ Before the world-model methods, the field evolved through an explicit modular st
 
 | Paradigm | Representative citation | Main contribution | World-model boundary |
 | --- | --- | --- | --- |
-| Modular system | **Paden et al.**, *A Survey of Motion Planning and Control Techniques for Self-Driving Urban Vehicles* (IEEE T-IV 2016) | Canonical explicit planning/control pipeline | Background survey; no learned recursive state transition |
-| Modular supplement | **Badue et al.**, *Self-driving cars: A survey* (ESWA 2021) | Broader system-level survey of perception, mapping, planning, control, and deployment | Optional background citation, not a world model |
-| End-to-end driving | **Bojarski et al.**, *End to End Learning for Self-Driving Cars* (NVIDIA PilotNet, 2016) | Direct camera-to-steering policy learning | Policy prediction, not future-state rollout |
-| Planning-oriented end-to-end | **Hu et al.**, *Planning-oriented Autonomous Driving* (UniAD, CVPR 2023) | Joint task coordination around planning | Planning-centered precursor; not itself a world model |
-| VLA / VLM-to-driving | **Tian et al.**, *DriveVLM* (2024) | Language-mediated scene reasoning and hierarchical planning, with DriveVLM-Dual vehicle deployment | VLA/VLM bridge; only predictive iterable components enter the WM scope |
+| Modular system | [**Paden et al.**, *A Survey of Motion Planning and Control Techniques for Self-Driving Urban Vehicles* (IEEE T-IV 2016)](https://doi.org/10.1109/TIV.2016.2578706) | Canonical explicit planning/control pipeline | Background survey; no learned recursive state transition |
+| Modular supplement | [**Badue et al.**, *Self-driving cars: A survey* (ESWA 2021)](https://doi.org/10.1016/j.eswa.2020.113816) | Broader system-level survey of perception, mapping, planning, control, and deployment | Optional background citation, not a world model |
+| End-to-end driving | [**Bojarski et al.**, *End to End Learning for Self-Driving Cars* (NVIDIA PilotNet, 2016)](https://arxiv.org/abs/1604.07316) | Direct camera-to-steering policy learning | Policy prediction, not future-state rollout |
+| Planning-oriented end-to-end | [**Hu et al.**, *Planning-oriented Autonomous Driving* (UniAD, CVPR 2023)](https://doi.org/10.1109/CVPR52729.2023.01712) | Joint task coordination around planning | Planning-centered precursor; not itself a world model |
+| VLA / VLM-to-driving | [**Tian et al.**, *DriveVLM* (2024)](https://arxiv.org/abs/2402.12289) | Language-mediated scene reasoning and hierarchical planning, with DriveVLM-Dual vehicle deployment | VLA/VLM bridge; only predictive iterable components enter the WM scope |
 
 For the compact four-citation introduction route, use Paden, Bojarski, UniAD, and DriveVLM; use Badue when a broader modular-system survey is needed.
 
@@ -57,6 +57,21 @@ These surveys cover neighboring areas used in driving world models, but their fu
 - **Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis** (IEEE OJ-ITS 2026) - foundation models, including world models, for scenario generation, analysis, and safety testing. [[P](https://arxiv.org/abs/2506.11526)] [[Journal](https://doi.org/10.1109/OJITS.2026.3660686)] [[List](https://github.com/TUM-AVS/FM-AD-Survey)] [[Details](SURVEY_COMPARISON.md#foundation-models-in-autonomous-driving-a-survey-on-scenario-generation-and-scenario-analysis)]
 - **A Survey on Multimodal Large Language Models for Autonomous Driving** (WACV Workshops 2024) - driving VLMs and multimodal reasoning. [[P](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)] [[Details](SURVEY_COMPARISON.md#a-survey-on-multimodal-large-language-models-for-autonomous-driving)]
 - **Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies** (arXiv 2024) - data engines and closed-loop development. [[P](https://arxiv.org/abs/2401.12888)] [[List](https://github.com/LincanLi98/Awesome-Data-Centric-Autonomous-Driving)] [[Details](SURVEY_COMPARISON.md#data-centric-evolution-in-autonomous-driving-a-comprehensive-survey-of-big-data-system-data-mining-and-closed-loop-technologies)]
+
+### Cross-domain foundational surveys and methodological sources
+
+These works contribute safety, embodied-AI, simulator, 3D/4D, general-world-model, video-efficiency, or RL foundations. They are indexed separately because not every reviewed method satisfies our ego-action and iterable-rollout admission criteria.
+
+| Year | Scope | Survey / source | Detailed native classification | Main contribution | Resources |
+| ---: | --- | --- | --- | --- | --- |
+| 2026 | Embodied AI | **A Comprehensive Survey on World Models for Embodied AI** | functionality: decision-coupled / general-purpose; temporal: sequential simulation / global difference; spatial: vector / token / grid / decomposed rendering | Formalizes embodied WMs and provides a three-axis taxonomy, resources, metrics, and quantitative comparisons | [[P](https://arxiv.org/abs/2510.16732)] [[List](https://github.com/Li-Zn-H/AwesomeWorldModels)] [[Details](SURVEY_COMPARISON.md#a-comprehensive-survey-on-world-models-for-embodied-ai)] |
+| 2026 | 3D/4D | **3D and 4D World Modeling: A Survey** | VideoGen / OccGen / LiDARGen × generative / predictive × geometric / action / semantic conditions × four functional roles | Establishes a native 3D/4D definition, multi-axis taxonomy, datasets, and metrics | [[P](https://arxiv.org/abs/2509.07996)] [[Project](https://worldbench.github.io/survey)] [[List](https://github.com/worldbench/awesome-3d-4d-world-models)] [[Details](SURVEY_COMPARISON.md#3d-and-4d-world-modeling-a-survey)] |
+| 2026 | Video efficiency | **Video Generation Models as World Models: Efficient Paradigms, Architectures and Algorithms** | efficient modeling / architecture / inference, each split into concrete diffusion, AR, memory, attention, caching, pruning, and quantization techniques | Makes efficiency a first-class prerequisite for interactive video world simulators | [[P](https://arxiv.org/abs/2603.28489)] [[Details](SURVEY_COMPARISON.md#video-generation-models-as-world-models-efficient-paradigms-architectures-and-algorithms)] |
+| 2025/26 | Simulators + embodied AI | **A Survey: Learning Embodied Intelligence from Physical Simulators and World Models** | robot autonomy IR-L0–L4; simulators by physics/rendering/sensors; WMs as neural simulators / dynamics / reward models | Unifies external physical simulation and internal learned modeling across robots and driving | [[P](https://arxiv.org/abs/2507.00917)] [[List](https://github.com/NJU3DV-LoongGroup/Embodied-World-Models-Survey)] [[Details](SURVEY_COMPARISON.md#a-survey-learning-embodied-intelligence-from-physical-simulators-and-world-models)] |
+| 2024 | General WMs | **Understanding World or Predicting Future? A Comprehensive Survey of World Models** | understanding: internal representation / world knowledge; prediction: video generation / embodied environment; four application domains | Introduces the understanding-versus-prediction functional split and maps it across domains | [[P](https://arxiv.org/abs/2411.14499)] [[List](https://github.com/tsinghua-fib-lab/World-Model)] [[Details](SURVEY_COMPARISON.md#understanding-world-or-predicting-future-a-comprehensive-survey-of-world-models)] |
+| 2024/25 | General WMs | **Is Sora a World Simulator? A Comprehensive Survey on General World Models and Beyond** | video generation / autonomous driving / autonomous agents; driving split into E2E and 2D/3D neural simulators | Connects generative world modeling to driving and autonomous-agent decision systems | [[P](https://arxiv.org/abs/2405.03520)] [[List](https://github.com/GigaAI-research/General-World-Models-Survey)] [[Details](SURVEY_COMPARISON.md#is-sora-a-world-simulator-a-comprehensive-survey-on-general-world-models-and-beyond)] |
+| 2024 | Safety | **World Models: The Safety Perspective** | RNN / Transformer / diffusion / other techniques, followed by pathology and a safety research agenda | Centers hallucination, trustworthiness, and high-priority safety problems for embodied agents | [[P](https://arxiv.org/abs/2411.07690)] [[Proceedings](https://doi.org/10.1109/ISSREW63542.2024.00104)] [[Details](SURVEY_COMPARISON.md#world-models-the-safety-perspective)] |
+| 2026 | RL methodology | **Reinforcement Learning: From Algorithms to Foundation Models** | multi-agent games; diffusion WMs; efficient video generation; generative policies; interactive video WMs; memory | Princeton dissertation connecting RL algorithms to generative and foundation-model world modeling; not a survey article | [[Thesis](https://arxiv.org/abs/2607.17560)] [[Details](SURVEY_COMPARISON.md#reinforcement-learning-from-algorithms-to-foundation-models)] |
 
 ## Contents
 
@@ -136,10 +151,7 @@ See the front-page [autonomous driving world model survey collection](#autonomou
 
 ### General world models and physical AI
 
-- Understanding World or Predicting Future? A Comprehensive Survey of World Models (2024). [[P](https://arxiv.org/abs/2411.14499)]
-- Is Sora a World Simulator? A Comprehensive Survey on General World Models and Beyond (2024). [[P](https://arxiv.org/abs/2405.03520)] [[C](https://github.com/GigaAI-research/General-World-Models-Survey)]
-- 3D and 4D World Modeling: A Survey (2025). [[P](https://arxiv.org/abs/2509.07996)] [[C](https://github.com/worldbench/survey)]
-- World Models: The Safety Perspective (ISSREW 2024). [[P](https://arxiv.org/abs/2411.07690)]
+See the front-page [cross-domain foundational survey table](#cross-domain-foundational-surveys-and-methodological-sources) and its [full survey dossiers](SURVEY_COMPARISON.md#cross-domain-foundational-surveys) for detailed classifications, core contributions, teams, publication status, and scope boundaries.
 
 ## World models by future-state representation
 

@@ -41,7 +41,7 @@ Corrections to metadata, broken links, categorization, and scope are as valuable
 
 ## Updating the survey comparison
 
-When adding or correcting a survey, update both the compact README index and `SURVEY_COMPARISON.md`. Record the authors, paper-level affiliations, verified publication status, scope, the authors' own taxonomy, evaluation/deployment coverage, companion resources, and the difference from this repository's framework. Cite a preprint as a preprint until a publisher or DOI record confirms publication, and state the evidence limitation when the full text or affiliations cannot be verified.
+When adding or correcting a survey, update both the compact README index and `SURVEY_COMPARISON.md`. Record the authors, paper-level affiliations, verified publication status, scope, the authors' own detailed taxonomy, core contributions, evaluation/deployment coverage, companion resources, and the difference from this repository's framework. Preserve the survey authors' taxonomy levels rather than replacing them with our categories. Cite a preprint as a preprint until a publisher or DOI record confirms publication, and state the evidence limitation when the full text or affiliations cannot be verified.
 
 Historical background citations belong in `AD_BACKGROUND_MILESTONES.md`, not in the core world-model categories, unless the work also provides an action-conditioned and recursively iterable learned transition model.
 
