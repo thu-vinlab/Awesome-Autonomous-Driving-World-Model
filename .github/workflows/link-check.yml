@@ -27,6 +27,7 @@ jobs:
             --exclude '^https://dl\.acm\.org/doi/full/10\.1145/3769748\.3773345$'
             --exclude '^https://doi\.org/10\.1145/3769748\.3773345$'
             --exclude '^https://doi\.org/10\.2139/ssrn\.6827179$'
+            --exclude '^https://doi\.org/10\.2139/ssrn\.7032792$'
             --exclude '^https://doi\.org/10\.3390/app15168986$'
             --exclude '^https://openreview\.net/forum\?id=tsE5HLYtYg$'
             --max-retries 3
