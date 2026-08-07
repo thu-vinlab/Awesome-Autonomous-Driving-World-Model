@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T09:11:11Z",
+  "generated_at": "2026-08-07T09:15:16Z",
   "sources": {
     "AD": {
       "name": "HaoranZhuExplorer/World-Models-Autonomous-Driving-Survey",
@@ -38097,7 +38097,7 @@
     },
     {
       "title": "PreWorld: Semi-Supervised Vision-Centric 3D Occupancy World Model for Autonomous Driving",
-      "paper": "https://openreview.net/pdf?id=rCX9l4OTCT",
+      "paper": "https://arxiv.org/abs/2502.07309",
       "resources": [
         {
           "label": "Code",
@@ -39205,7 +39205,7 @@
     },
     {
       "title": "AdaWM: Adaptive World Model based Planning for Autonomous Driving",
-      "paper": "https://openreview.net/pdf?id=NEu8wgPctU",
+      "paper": "https://arxiv.org/abs/2501.13072",
       "resources": [
 
       ],
@@ -39528,47 +39528,6 @@
       "year": 2025,
       "audit_level": "Metadata classified",
       "representative": false
-    },
-    {
-      "title": "LAW: Enhancing End-to-End Autonomous Driving with Latent World Model",
-      "paper": "https://openreview.net/pdf?id=fd2u60ryG0",
-      "resources": [
-        {
-          "label": "Code",
-          "url": "https://github.com/BraveGroup/LAW"
-        }
-      ],
-      "sources": [
-        "AD",
-        "LMD"
-      ],
-      "source_sections": {
-        "AD": [
-          "World-Models-Autonomous-Driving-Latest-Survey",
-          "Papers",
-          "2025",
-          "ICLR 2025"
-        ],
-        "LMD": [
-          "Awesome World Models for Autonomous Driving",
-          "Papers",
-          "2024"
-        ]
-      },
-      "raw": {
-        "AD": "* LAW: Enhancing End-to-End Autonomous Driving with Latent World Model  __`ICLR 2025`__; __`End-to-End AD`__; [Paper](https://openreview.net/pdf?id=fd2u60ryG0), [Code](https://github.com/BraveGroup/LAW)",
-        "LMD": "- [**LAW**] Enhancing End-to-End Autonomous Driving with Latent World Model. **`arXiv 24.6`** [[Paper](https://arxiv.org/abs/2406.08481)] [[Code](https://github.com/BraveGroup/LAW)]"
-      },
-      "admission": "Core candidate - explicit driving world model",
-      "scope": "Driving world models: core and inclusive candidates",
-      "representation": "3.3 Latent-space prediction",
-      "mechanism": "4.2 Latent dynamics / state-space / JEPA",
-      "roles": [
-        "Ch.5 planning rollout"
-      ],
-      "year": 2025,
-      "audit_level": "Full-text audited",
-      "representative": true
     },
     {
       "title": "LongDWM: Cross-Granularity Distillation for Building a Long-Term Driving World Model",
@@ -40255,10 +40214,7 @@
       "title": "DrivePhysica Physical Informed Driving World Model",
       "paper": "https://arxiv.org/abs/2412.08410",
       "resources": [
-        {
-          "label": "Code",
-          "url": "https://metadrivescape.github.io/papers_project/DrivePhysica/page.html"
-        }
+
       ],
       "sources": [
         "LMD"
@@ -40520,6 +40476,47 @@
       "representative": false
     },
     {
+      "title": "LAW: Enhancing End-to-End Autonomous Driving with Latent World Model",
+      "paper": "https://arxiv.org/abs/2406.08481",
+      "resources": [
+        {
+          "label": "Code",
+          "url": "https://github.com/BraveGroup/LAW"
+        }
+      ],
+      "sources": [
+        "AD",
+        "LMD"
+      ],
+      "source_sections": {
+        "AD": [
+          "World-Models-Autonomous-Driving-Latest-Survey",
+          "Papers",
+          "2025",
+          "ICLR 2025"
+        ],
+        "LMD": [
+          "Awesome World Models for Autonomous Driving",
+          "Papers",
+          "2024"
+        ]
+      },
+      "raw": {
+        "AD": "* LAW: Enhancing End-to-End Autonomous Driving with Latent World Model  __`ICLR 2025`__; __`End-to-End AD`__; [Paper](https://openreview.net/pdf?id=fd2u60ryG0), [Code](https://github.com/BraveGroup/LAW)",
+        "LMD": "- [**LAW**] Enhancing End-to-End Autonomous Driving with Latent World Model. **`arXiv 24.6`** [[Paper](https://arxiv.org/abs/2406.08481)] [[Code](https://github.com/BraveGroup/LAW)]"
+      },
+      "admission": "Core candidate - explicit driving world model",
+      "scope": "Driving world models: core and inclusive candidates",
+      "representation": "3.3 Latent-space prediction",
+      "mechanism": "4.2 Latent dynamics / state-space / JEPA",
+      "roles": [
+        "Ch.5 planning rollout"
+      ],
+      "year": 2024,
+      "audit_level": "Full-text audited",
+      "representative": true
+    },
+    {
       "title": "Mitigating Covariate Shift in Imitation Learning for Autonomous Vehicles Using Latent Space Generative World Models",
       "paper": "https://arxiv.org/abs/2409.16663",
       "resources": [
@@ -40563,7 +40560,7 @@
       "resources": [
         {
           "label": "Code",
-          "url": "https://github.com/SCP-CN-001/ramble"
+          "url": "https://github.com/SCP-CN-001/rambler"
         }
       ],
       "sources": [
@@ -40780,7 +40777,7 @@
       "resources": [
         {
           "label": "Code",
-          "url": "https://github.com/chaytonmin/UniWorld"
+          "url": "https://github.com/whuhxb/UniWorld"
         }
       ],
       "sources": [

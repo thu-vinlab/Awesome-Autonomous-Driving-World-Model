@@ -85,6 +85,23 @@ MECHANISM_OVERRIDES = {
   "vista" => "4.3 Diffusion and flow-matching rollout"
 }.freeze
 
+# Preserve upstream provenance in `raw`, but publish stable replacements for
+# links that have moved or that systematically block automated paper access.
+PAPER_URL_OVERRIDES = {
+  "https://openreview.net/pdf?id=fd2u60ryG0" => "https://arxiv.org/abs/2406.08481",
+  "https://openreview.net/pdf?id=NEu8wgPctU" => "https://arxiv.org/abs/2501.13072",
+  "https://openreview.net/pdf?id=rCX9l4OTCT" => "https://arxiv.org/abs/2502.07309"
+}.freeze
+
+RESOURCE_URL_OVERRIDES = {
+  "https://github.com/chaytonmin/UniWorld" => "https://github.com/whuhxb/UniWorld",
+  "https://github.com/SCP-CN-001/ramble" => "https://github.com/SCP-CN-001/rambler"
+}.freeze
+
+DROPPED_RESOURCE_URLS = Set.new([
+  "https://metadrivescape.github.io/papers_project/DrivePhysica/page.html"
+]).freeze
+
 REPRESENTATIVE_DETAILS = {
   "gaia-1" => {
     team: "Wayve; technical report 2023",
@@ -627,6 +644,11 @@ end
 
 def write_catalog(entries, raw_counts, revisions)
   entries.each do |entry|
+    entry["paper"] = PAPER_URL_OVERRIDES.fetch(entry["paper"], entry["paper"])
+    entry["resources"] = entry["resources"].reject { |resource| DROPPED_RESOURCE_URLS.include?(resource["url"]) }
+    entry["resources"].each do |resource|
+      resource["url"] = RESOURCE_URL_OVERRIDES.fetch(resource["url"], resource["url"])
+    end
     entry["admission"] = admission_for(entry)
     entry["scope"] = scope_for(entry)
     entry["representation"] = representation_for(entry)
