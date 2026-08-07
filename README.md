@@ -376,6 +376,78 @@ These papers are relevant to the review but are **not counted as core driving wo
 - [**Symphony: Realistic and Diverse Agents for Driving Simulation**](https://arxiv.org/abs/2205.03195) (2022)
 - [**Iso-Dream: Isolating Noncontrollable Visual Dynamics**](https://arxiv.org/abs/2205.13817) (2022)
 
+### Additional occupancy, forecasting, and predictive representation papers
+
+The following driving papers were restored from the [LMD0311/Awesome-World-Model](https://github.com/LMD0311/Awesome-World-Model) driving section. They remain outside the strict core until action conditioning and recursive rollout are verified.
+
+- [**CRISP: Camera-Radar Forecasting-Based World-Model Pretraining**](https://arxiv.org/abs/2607.04541) (2026) — `Predictive pretraining`
+- [**CascadeOcc: 3D Occupancy World Models with Cascaded VQ Representations**](https://arxiv.org/abs/2606.27644) (2026) — `Occupancy prediction`
+- [**GEM: Generating LiDAR World Model via Deformable Mamba**](https://arxiv.org/abs/2605.07326) (2026) — `LiDAR prediction`
+- [**T3Former: Temporal Triplane Transformers as Occupancy World Models**](https://arxiv.org/abs/2503.07338) (2025) — `Occupancy prediction`
+- [**DIO: Decomposable Implicit 4D Occupancy-Flow World Model**](https://openaccess.thecvf.com/content/CVPR2025/papers/Diehl_DIO_Decomposable_Implicit_4D_Occupancy-Flow_World_Model_CVPR_2025_paper.pdf) (2025) — `Occupancy and flow`
+- [**FASTopoWM: Lane-Segment Topology Reasoning with Latent World Models**](https://arxiv.org/abs/2507.23325) (2025) — `Topology prediction`
+- [**FUTURIST: Semantic Future Prediction through Multimodal Visual Sequence Transformers**](https://arxiv.org/abs/2501.08303) (2025) — `Semantic prediction`
+- [**I2-World: Intra-Inter Tokenization for Dynamic 4D Scene Forecasting**](https://arxiv.org/abs/2507.09144) (2025) — `4D forecasting`
+- [**OccProphet: Pushing Efficiency Frontier of Camera-Only 4D Occupancy Forecasting with Observer-Forecaster-Refiner Framework**](https://openreview.net/forum?id=vC7AlY1ytz) (2025) — `Occupancy forecasting`
+- [**OccTENS: 3D Occupancy World Model via Temporal Next-Scale Prediction**](https://arxiv.org/abs/2509.03887) (2025) — `Occupancy prediction`
+- [**SparseWorld: Sparse and Dynamic 4D Occupancy World Model**](https://arxiv.org/abs/2510.17482) (2025) — `Occupancy prediction`
+- [**Towards Foundational LiDAR World Models with Efficient Latent Flow Matching**](https://arxiv.org/abs/2506.23434) (2025) — `LiDAR prediction`
+- [**An Efficient Occupancy World Model via Decoupled Dynamic Flow**](https://arxiv.org/abs/2412.13772) (2024) — `Occupancy prediction`
+- [**DINO-Foresight: Looking into the Future with DINO**](https://arxiv.org/abs/2412.11673) (2024) — `Predictive representation`
+- [**GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction**](https://arxiv.org/abs/2412.10373) (2024) — `Occupancy prediction`
+- [**OCCVAR: Scalable 4D Occupancy Prediction via Next-Scale Prediction**](https://openreview.net/forum?id=X2HnTFsFm8) (2024) — `Occupancy prediction`
+- [**RenderWorld: World Model with Self-Supervised 3D Labels**](https://arxiv.org/abs/2409.11356) (2024) — `Geometry prediction`
+- [**UnO: Unsupervised Occupancy Fields for Perception and Forecasting**](https://arxiv.org/abs/2406.08691) (2024) — `Occupancy forecasting`
+
+### Additional driving generation and sensor-simulation papers
+
+- [**A Mechanistic View on Video Generation as World Models**](https://arxiv.org/abs/2601.17067) (2026) — `Video-WM boundary`
+- [**DCARL: Autoregressive Long-Trajectory Video Generation**](https://arxiv.org/abs/2603.24835) (2026) — `Long-video generation`
+- [**ShareVerse: Multi-Agent Consistent Video Generation for Shared World Modeling**](https://arxiv.org/abs/2603.02697) (2026) — `Multi-agent generation`
+- [**Dreamland: Controllable World Creation with Simulator and Generative Models**](https://arxiv.org/abs/2506.08006) (2025) — `Data engine`
+- [**G2Editor: 3D Gaussian-Guided Object Editing for Driving Video Generation**](https://arxiv.org/abs/2508.20471) (2025) — `Driving video editing`
+- [**LaGen: Towards Autoregressive LiDAR Scene Generation**](https://arxiv.org/abs/2511.21256) (2025) — `LiDAR generation`
+- [**Learning to Generate 4D LiDAR Sequences**](https://arxiv.org/abs/2509.11959) (2025) — `LiDAR generation`
+- [**LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences**](https://arxiv.org/abs/2508.03692) (2025) — `LiDAR generation`
+- [**MoVieDrive: Multi-Modal Multi-View Urban Scene Synthesis**](https://arxiv.org/abs/2508.14327) (2025) — `Driving scene generation`
+- [**PhiGenesis: 4D Driving Scene Generation with Stereo Forcing**](https://arxiv.org/abs/2509.20251) (2025) — `4D scene generation`
+- [**RadarGen: Automotive Radar Point-Cloud Generation from Cameras**](https://arxiv.org/abs/2512.17897) (2025) — `Radar generation`
+- [**Seeing Clearly, Forgetting Deeply: Video Generators for Driving Simulation**](https://arxiv.org/abs/2508.16512) (2025) — `Simulator analysis`
+- [**STAGE: Stream-Centric Long-Horizon Driving-Scene Simulation**](https://arxiv.org/abs/2506.13138) (2025) — `Long-horizon simulation`
+- [**Delphi: Controllable Long-Video Generation for End-to-End Driving**](https://arxiv.org/abs/2406.01349) (2024) — `Driving video generation`
+- [**DriveGenVLM: Real-World Video Generation for VLM-Based Driving**](https://arxiv.org/abs/2408.16647) (2024) — `Video/VLM boundary`
+- [**DynamicCity: Large-Scale LiDAR Generation from Dynamic Scenes**](https://arxiv.org/abs/2410.18084) (2024) — `LiDAR generation`
+- [**Generating Out-of-Distribution Scenarios Using Language Models**](https://arxiv.org/abs/2411.16554) (2024) — `Scenario generation`
+- [**LidarDM: Generative LiDAR Simulation in a Generated World**](https://arxiv.org/abs/2404.02903) (2024) — `LiDAR simulation`
+
+### Additional planning, VLA, and closed-loop papers
+
+- [**Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning**](https://arxiv.org/abs/2606.05645) (2026) — `World-action model`
+- [**LIDAR-AD: Latent-Interaction Dreamer with Action-Residual Chains**](https://arxiv.org/abs/2607.11964) (2026) — `Planning / latent dynamics`
+- [**Orbis 2: A Hierarchical World Model for Driving**](https://arxiv.org/abs/2607.15898) (2026) — `Hierarchical rollout`
+- [**ReWorld: Learning Better Representations for World Action Models**](https://arxiv.org/abs/2606.27504) (2026) — `World-action representation`
+- [**SAMoE-VLA: Scene-Adaptive Mixture-of-Experts VLA for Autonomous Driving**](https://arxiv.org/abs/2603.08113) (2026) — `VLA boundary`
+- [**Vega: Learning to Drive with Natural-Language Instructions**](https://arxiv.org/abs/2603.25741) (2026) — `Language-driving boundary`
+- [**World Models as Adversaries: Self-Play Fine-Tuning for Robust Motion Planning**](https://arxiv.org/abs/2607.10630) (2026) — `Robust planning`
+- [**WorldVLM: World-Model Forecasting with Vision-Language Reasoning**](https://arxiv.org/abs/2603.14497) (2026) — `VLM/WM boundary`
+- [**CorrectAD: A Self-Correcting Agentic System for End-to-End Planning**](https://arxiv.org/abs/2511.13297) (2025) — `Agentic planning boundary`
+- [**DriveLaW: Planning and Video Generation in a Latent Driving World**](https://arxiv.org/abs/2512.23421) (2025) — `Planning / generation`
+- [**OmniNWM: Omniscient Driving Navigation World Models**](https://arxiv.org/abs/2510.18313) (2025) — `Navigation world model`
+- [**PIWM: Dream to Drive with Predictive Individual World Model**](https://arxiv.org/abs/2501.16733) (2025) — `Planning / prediction`
+- [**UniUGP: Unifying Understanding, Generation, and Planning for End-to-End Driving**](https://arxiv.org/abs/2512.09864) (2025) — `Understanding / generation / planning`
+- [**DriveSim: Probing Multimodal LLMs as World Models for Driving**](https://arxiv.org/abs/2405.05956) (2024) — `VLM evaluation boundary`
+- [**SSR: Does End-to-End Autonomous Driving Really Need Perception Tasks?**](https://arxiv.org/abs/2409.18341) (2024) — `E2E boundary`
+
+### Source-completeness entries outside the strict driving-WM scope
+
+These five entries occur in the upstream driving section but are retained only to make the coverage difference explicit; they are not counted as driving world models.
+
+- [**AVD2: Accident Video Diffusion for Accident Video Description**](https://arxiv.org/abs/2502.14801) (2025) — `Accident-video description`
+- [**Occ-LLM: Enhancing Autonomous Driving with Occupancy-Based LLMs**](https://arxiv.org/abs/2502.06419) (2025) — `Perception/LLM boundary`
+- [**Semi-SD: Semi-Supervised Metric Depth Estimation via Surrounding Cameras**](https://arxiv.org/abs/2503.19713) (2025) — `Depth estimation`
+- [**World Models for Autonomous Navigation of Terrestrial Robots from LiDAR**](https://arxiv.org/abs/2512.03429) (2025) — `Non-driving robot navigation`
+- [**UMAD: Unsupervised Mask-Level Anomaly Detection for Autonomous Driving**](https://arxiv.org/abs/2406.06370) (2024) — `Anomaly detection`
+
 ## Evaluation and benchmarks
 
 No single score establishes that a model is a useful driving world model. This index mirrors Chapter 6 by separating appearance, geometry, action response, rollout, and downstream utility.
