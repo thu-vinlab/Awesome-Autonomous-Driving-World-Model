@@ -4,12 +4,14 @@ Thank you for helping improve Awesome Autonomous Driving World Models.
 
 ## What belongs in this list
 
-A core submission should concern a learned model of driving-scene dynamics and satisfy both criteria:
+A core submission should concern driving and be explicitly presented by its authors as a **world model**, **driving world model**, or **world-action model** in the title, abstract, or paper. This author-definition rule determines inclusion.
+
+We separately record two analytical properties:
 
 - **Action conditionality:** ego actions are inputs and materially change predicted future states.
 - **Rollout capability:** predicted states can feed subsequent transitions rather than supporting only one fixed prediction.
 
-We inclusively retain papers whose authors explicitly identify them as world models and which broadly meet both criteria, but borderline submissions must state the evidence. Pure generation, static reconstruction, perception-only VLMs, action-only VLAs, non-predictive E2E driving, and hand-engineered simulators do not belong in the core paper list; they may be proposed as boundary or methodological resources. A public paper is required, and official code, data, model, and project links are strongly preferred.
+Neither property is an exclusion threshold. A driving paper that the authors explicitly define as a world model remains in Core even when its action response or recursive rollout is absent or unclear; the entry should state that limitation rather than override the authors' terminology. Papers that do not make a world-model claim may be proposed as related generation, prediction, VLA/E2E, or methodological resources. Static reconstruction, hand-engineered simulators, generic vision, and unrelated robotics do not belong in Core. A public paper is required, and official code, data, model, and project links are strongly preferred.
 
 ## Before opening a pull request
 
@@ -29,7 +31,7 @@ Omit labels that are unavailable. Use the publication venue when confirmed; othe
 
 ## Pull request checklist
 
-- [ ] The resource meets the scope and inclusion criteria.
+- [ ] The Core resource is driving-related and the authors explicitly define it as a world model or world-action model.
 - [ ] The entry is not already present.
 - [ ] The title, venue, year, and links match the primary source.
 - [ ] The work appears in one primary category.
@@ -44,7 +46,7 @@ Corrections to metadata, broken links, categorization, and scope are as valuable
 
 `README.md` is the single literature collection. When adding or correcting a survey, record the authors or team, verified publication status, the authors' own taxonomy, core contribution, and difference from this repository's framework. Preserve the survey authors' taxonomy rather than replacing it with ours. Cite a preprint as a preprint until a publisher or DOI confirms publication.
 
-Historical background citations belong in the milestone table, not in the Core Taxonomy, unless the work also provides an action-conditioned and recursively iterable learned transition model. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
+Historical background citations belong in the milestone table, not in the Core Taxonomy, unless the authors explicitly present the driving method as a world model or world-action model. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
 
 Every core item must retain an audit label:
 
