@@ -223,7 +223,7 @@ The **192 papers** below enter through either the author-defined or definition-a
 
 ### 3.2.2 Scene-level: BEV, occupancy, and geometry
 
-**29 papers: 3 representative papers + 26 compact entries.**
+**30 papers: 3 representative papers + 27 compact entries.**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
@@ -259,10 +259,11 @@ The **192 papers** below enter through either the author-defined or definition-a
 - [**RenderWorld: World Model with Self-Supervised 3D Labels**](https://arxiv.org/abs/2409.11356) (2024) — `Author-defined WM` · `Metadata classified` · self-supervised geometry prediction
 - [**DOME: Controllable Occupancy World Model**](https://arxiv.org/abs/2410.10429) (2024) — `Author-defined WM` · `Metadata classified` · controllable occupancy generation
 - [**DeltaMamba: Structure-Aware Spatiotemporal World Model for 4D Occupancy Forecasting**](https://doi.org/10.2139/ssrn.6749443) (2026) — `Author-defined WM` · `Abstract audited` · kinematics-aware state-space forecasting and planning
+- [**CoPhy: Distill to Think, Foresee to Act**](https://arxiv.org/abs/2605.21139) (2026) — `Author-defined WM` · `Full-text audited` · candidate-action-conditioned Transformer recursively predicts dense BEV semantic maps with focal-loss supervision for policy optimization
 
 ### 3.3 Latent-space prediction
 
-**100 papers: 4 representative papers + 96 compact entries.**
+**99 papers: 4 representative papers + 95 compact entries.**
 
 | Paper | Team / venue | Core contribution | Future state and action | Mechanism / role | Data and evidence |
 | --- | --- | --- | --- | --- | --- |
@@ -273,7 +274,6 @@ The **192 papers** below enter through either the author-defined or definition-a
 
 **Complete list beyond the representative table:**
 
-- [**CoPhy: Distill to Think, Foresee to Act**](https://arxiv.org/abs/2605.21139) (2026) — `Author-defined WM` · `Abstract audited` · autoregressive candidate-action-conditioned BEV rollout for policy optimization
 - [**DLWM: Dual Latent World Models Enable Holistic Gaussian-Centric Pre-training in Autonomous Driving**](https://arxiv.org/abs/2604.00969) (CVPR 2026) — `Author-defined WM` · `Abstract audited` · Gaussian-flow- and ego-planning-guided latent prediction
 - [**DriveFuture: Future-Aware Latent World Models for Autonomous Driving**](https://arxiv.org/abs/2605.09701) (2026) — `Author-defined WM` · `Abstract audited` · ego-action-conditioned future latent state for planning
 - [**DriveWorld-VLA: Unified Latent-Space World Modeling with Vision-Language-Action for Autonomous Driving**](https://arxiv.org/abs/2602.06521) (ICML 2026) — `Author-defined WM` · `Abstract audited` · action-conditioned latent imagination [[Code](https://github.com/liulin815/DriveWorld-VLA)] [[Venue](https://icml.cc/virtual/2026/poster/61191)]
@@ -379,7 +379,7 @@ This is the Chapter 4 cross-index: representation remains the primary home of ea
 | Mechanism | Representative papers | What the index captures | Recurring long-horizon issue |
 | --- | --- | --- | --- |
 | Latent dynamics / state space / JEPA | [MILE](https://arxiv.org/abs/2210.07729), [Think2Drive](https://arxiv.org/abs/2402.16720), [DriveWorld](https://arxiv.org/abs/2405.04390), [LAW](https://arxiv.org/abs/2406.08481), [AD-L-JEPA](https://arxiv.org/abs/2501.04969), [ResWorld](https://arxiv.org/abs/2602.10884) | recurrent state-space transitions, feature prediction, predictive embedding objectives | latent collapse, compounding model bias, weak observability of failure |
-| Autoregressive | [GAIA-1](https://arxiv.org/abs/2309.17080), [DrivingWorld](https://arxiv.org/abs/2412.19505), [GUMP](https://arxiv.org/abs/2407.02797), [OccWorld](https://arxiv.org/abs/2311.16038), [HorizonDrive](https://arxiv.org/abs/2605.11596), [OccSim](https://arxiv.org/abs/2603.28887) | next-token or next-state causal factorization over visual, entity, geometry, or latent tokens | exposure bias, identity switching, sequential inference cost |
+| Autoregressive | [GAIA-1](https://arxiv.org/abs/2309.17080), [DrivingWorld](https://arxiv.org/abs/2412.19505), [GUMP](https://arxiv.org/abs/2407.02797), [OccWorld](https://arxiv.org/abs/2311.16038), [CoPhy](https://arxiv.org/abs/2605.21139), [HorizonDrive](https://arxiv.org/abs/2605.11596), [OccSim](https://arxiv.org/abs/2603.28887) | next-token or next-state causal factorization over visual, entity, geometry, or latent tokens | exposure bias, identity switching, sequential inference cost |
 | Diffusion | [DriveDreamer](https://arxiv.org/abs/2309.09777), [Drive-WM](https://arxiv.org/abs/2311.17918), [Vista](https://arxiv.org/abs/2405.17398), [Copilot4D](https://arxiv.org/abs/2311.01017), [DOME](https://arxiv.org/abs/2410.10429) | multimodal denoising in video, point-cloud, occupancy, or latent space | sampling cost, temporal/geometric drift, weakening action response |
 | Flow matching | [WAM-Flow](https://arxiv.org/abs/2512.06112), [WorldRFT](https://arxiv.org/abs/2512.19133), [DynFlowDrive](https://arxiv.org/abs/2603.19675), [VectorWorld](https://arxiv.org/abs/2603.17652) | continuous or discrete transport for efficient multimodal generation/planning | limited closed-loop evidence and solver/schedule sensitivity |
 | Hybrid / multi-stage | [GAIA-1](https://arxiv.org/abs/2309.17080), [Vista](https://arxiv.org/abs/2405.17398), [HERMES](https://arxiv.org/abs/2501.14729), [UniFuture](https://arxiv.org/abs/2503.13587) | combinations of token prediction, diffusion decoding, geometry, semantics, or planners | interface mismatch and difficult end-to-end attribution |
@@ -477,6 +477,7 @@ Core papers keep their single primary home in the representation taxonomy and ar
 
 #### Supporting planning, VLA, and agentic references (not counted as Core)
 
+- [**CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving**](https://arxiv.org/abs/2607.02841) (2026) — Qualcomm AI Research's heterogeneous CARLA/VLA training system scales residual-waypoint policy optimization; it uses an external simulator rather than learning a world transition
 - [**WoTE**](https://arxiv.org/abs/2504.01941) - online trajectory evaluation through a BEV world model. [[Code](https://github.com/liyingyanUCAS/WoTE)]
 - [**DynVLA: Learning World Dynamics for Action Reasoning in Autonomous Driving**](https://arxiv.org/abs/2603.11041) (ICML 2026) [[Venue](https://icml.cc/virtual/2026/poster/63736)]
 - [**See Tomorrow, Act Today: Foresight-Driven Autonomous Driving**](https://arxiv.org/abs/2605.07195) (2026)
@@ -566,6 +567,7 @@ Datasets are resources, not world models. They are grouped by the evidence they 
 | --- | --- | --- |
 | Physics / traffic simulation | [CARLA](https://github.com/carla-simulator/carla), [MetaDrive](https://github.com/metadriverse/metadrive), [SUMO](https://github.com/eclipse-sumo/sumo), [SMARTS](https://github.com/huawei-noah/SMARTS) | hand-engineered environments and test infrastructure; explicitly outside the learned-WM core |
 | Planning / closed-loop evaluation | [nuPlan devkit](https://github.com/motional/nuplan-devkit), [Waymax](https://github.com/waymo-research/waymax), [CARLA-Garage](https://github.com/autonomousvision/carla_garage) | reproducible policy evaluation, log replay, and baselines |
+| High-throughput self-play simulation | [Gigapixel](https://arxiv.org/abs/2606.19641) | batched perspective rendering over an abstract PufferDrive/Madrona simulator at 50k agent steps/s; infrastructure for pixel-policy self-play, not a learned world model |
 | World-model learning platform | [CarDreamer](https://github.com/ucd-dare/CarDreamer) | CARLA-based environment for world-model RL and driving research |
 | Learned / generative simulator | [Vista](https://github.com/OpenDriveLab/Vista), [ReSim](https://opendrivelab.com/ReSim), [SimWorld](https://github.com/Li-Zn-H/SimWorld) | controllable learned rollouts and simulator evaluation |
 
