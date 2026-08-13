@@ -46,11 +46,11 @@ Corrections to metadata, broken links, categorization, and scope are as valuable
 
 `README.md` is the single literature collection. When adding or correcting a survey, record the authors or team, verified publication status, the authors' own taxonomy, core contribution, and difference from this repository's framework. Preserve the survey authors' taxonomy rather than replacing it with ours. Cite a preprint as a preprint until a publisher or DOI confirms publication.
 
-Historical background citations belong in the milestone table, not in the Core Taxonomy, unless they satisfy one of the two Core admission routes. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records do not belong in this repository merely because an upstream awesome list included them.
+Historical background citations belong in the milestone table, not in the Core Taxonomy, unless they satisfy one of the two Core admission routes. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other cross-domain records are outside this repository's scope.
 
 Every core item must retain an audit label:
 
-- **Metadata classified:** initially organized from title, abstract/metadata, and upstream context; this is not a claim of full-paper review.
+- **Metadata classified:** initially organized from the title, abstract, metadata, and public project information; this is not a claim of full-paper review.
 - **Full-text audited:** the paper's predicted state, action conditioning, rollout procedure, loss, role, and evidence have been checked in the full text.
 
 Only full-text-audited, field-representative papers should enter the detailed representative tables. Other works remain compact entries until audited.

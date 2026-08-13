@@ -1,16 +1,39 @@
 # Awesome Autonomous Driving World Models
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Link Check](https://github.com/thu-vinlab/Awesome-Autonomous-Driving-World-Model/actions/workflows/link-check.yml/badge.svg)](https://github.com/thu-vinlab/Awesome-Autonomous-Driving-World-Model/actions/workflows/link-check.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 A curated collection of **world models for autonomous driving**, organized by how a model represents the future, rolls it out, and contributes to a driving system.
 
-Unlike chronological paper dumps, this list uses a review-oriented taxonomy. It emphasizes representative, reproducible, and evaluation-relevant resources. The list is maintained as a companion resource for our ongoing review, *Autonomous Driving World Models: Representations, Rollout Mechanisms, System Roles, and Deployment*.
+The collection follows the taxonomy of our ongoing review, *Autonomous Driving World Models: Representations, Rollout Mechanisms, System Roles, and Deployment*.
 
-> **Last updated:** 7 August 2026. This is a living, field-specific list rather than a claim of permanent completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
+> **Last updated:** 13 August 2026. This is a living, field-specific list rather than a claim of permanent completeness. Suggestions and corrections are welcome through [pull requests or issues](CONTRIBUTING.md).
 
-This README is the complete reader-facing collection. Generic autoregressive vision, unrelated robotics, image generation, medical world models, and other source-archive records are deliberately excluded even when they appeared in an upstream list.
+## Contents
+
+- [Autonomous driving background milestones](#autonomous-driving-background-milestones)
+- [Surveys](#surveys)
+- [Scope and taxonomy](#scope-and-taxonomy)
+- [2026 literature update](#2026-literature-update)
+- [Core taxonomy: world models by future-state representation](#core-taxonomy-world-models-by-future-state-representation)
+  - [3.1.1 Observation-level: future image and video](#311-observation-level-future-image-and-video)
+  - [3.1.2 Observation-level: future point cloud](#312-observation-level-future-point-cloud)
+  - [3.2.1 Scene-level: entities and interactions](#321-scene-level-entities-and-interactions)
+  - [3.2.2 Scene-level: BEV, occupancy, and geometry](#322-scene-level-bev-occupancy-and-geometry)
+  - [3.3 Latent-space prediction](#33-latent-space-prediction)
+- [Rollout mechanisms](#rollout-mechanisms)
+  - [Mechanism foundations and boundary references](#mechanism-foundations-and-boundary-references)
+- [System roles](#system-roles)
+  - [Data engine and scenario generation](#data-engine-and-scenario-generation)
+  - [Open-loop and closed-loop simulation](#open-loop-and-closed-loop-simulation)
+  - [Planning and policy learning](#planning-and-policy-learning)
+  - [Predictive representation pretraining](#predictive-representation-pretraining)
+- [Evaluation and benchmarks](#evaluation-and-benchmarks)
+- [Datasets](#datasets)
+- [Simulators and platforms](#simulators-and-platforms)
+- [Safety, robustness, and deployment](#safety-robustness-and-deployment)
+- [Workshops and challenges](#workshops-and-challenges)
+- [Contributing](#contributing)
 
 ## Autonomous driving background milestones
 
@@ -26,9 +49,9 @@ Before the world-model methods, the field evolved through an explicit modular st
 
 For the compact four-citation introduction route, use Paden, Bojarski, UniAD, and DriveVLM; use Badue when a broader modular-system survey is needed.
 
-## Autonomous driving world model surveys
+## Surveys
 
-> **Coverage note (searched 7 August 2026):** this collection combines the three source repositories with independent title/keyword searches of arXiv, OpenAlex, Crossref, Semantic Scholar, and GitHub. It aims for high coverage of public English-language surveys, but no literature search can guarantee permanent completeness; newly indexed and non-English work may still be missing.
+This section covers public English-language surveys directly relevant to autonomous-driving world models. It is a living bibliography: newly indexed and non-English work may still be missing.
 
 The unified table keeps three explicit coverage labels rather than relying on separate, overlapping sections:
 
@@ -36,43 +59,21 @@ The unified table keeps three explicit coverage labels rather than relying on se
 - **Thematic DWM:** organizes a specific driving-world-model topic such as latent design, robustness, shared worlds, or video generation.
 - **Adjacent AD:** covers a neighboring autonomous-driving field and is retained only for the review chapters it directly supports.
 
-| Coverage | Year | Survey | Authors / team and status | Authors' taxonomy and coverage | Contribution to this review | Resources |
-| --- | ---: | --- | --- | --- | --- | --- |
-| General DWM | 2026 | [**World Models for Autonomous Driving: From Future Generation to Decision Making**](https://doi.org/10.2139/ssrn.6827179) | Han Huang *et al.*; Tongji-led multi-institution team; SSRN working paper | future-world generation / planning with world models / hybrid prediction-planning; MPC-oriented comparison by state representation and generator | Connects prediction to decision, uncertainty, cost evaluation, and receding-horizon control; our review keeps representation, rollout mechanism, system role, and assurance as separate axes | [[Preprint](https://doi.org/10.2139/ssrn.6827179)] |
-| General DWM | 2025 | [**The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey**](https://arxiv.org/abs/2502.10498) | Sifan Tu *et al.*; Huazhong University of Science and Technology + Baidu; arXiv v2, updated 2026 | ecosystem of simulators / datasets / metrics; predicted modality: video / point cloud / occupancy / latent feature / traffic map; applications in generation, simulation, driving enhancement, and pretraining | Supplies the broadest modality-centered comparison and quantitative tables; our review separates entity from geometry and adds explicit author-defined/review-classified admission routes | [[Paper](https://arxiv.org/abs/2502.10498)] [[List](https://github.com/LMD0311/Awesome-World-Model)] |
-| General DWM | 2025 | [**Research on World Models for Connected Automated Driving: Advances, Challenges, and Outlook**](https://doi.org/10.3390/app15168986) | Nuo Chen and Xiang Liu; Shanghai University of Engineering Science; *Applied Sciences* 15(16), 8986 | cooperative perception / prediction / decision / control / human-machine collaboration / scene generation | Extends the map to connected automated vehicles and vehicle-road-cloud cooperation; its broad CAV pipeline categories inform our system-role discussion but do not determine Core admission | [[Journal](https://doi.org/10.3390/app15168986)] |
-| General DWM | 2025 | [**A Survey of World Models for Autonomous Driving**](https://arxiv.org/abs/2501.11260) | Tuo Feng, Wenguan Wang, and Yi Yang; Zhejiang University CCAI; arXiv v4, manuscript submitted to ACM | future physical-world generation / behavior planning / prediction-planning interaction; image / BEV / occupancy-grid / point-cloud generation subtypes | Consolidates generation, planning, training paradigms, benchmarks, and performance; our review makes state representation, mechanism, and system role orthogonal | [[Paper](https://arxiv.org/abs/2501.11260)] [[List](https://github.com/FengZicai/AwesomeWMAD)] [[Benchmark](https://github.com/FengZicai/WMAD-Benchmarks)] |
-| General DWM | 2025 | [**World Models for Autonomous Driving: An Initial Survey**](https://doi.org/10.1109/TIV.2024.3398357) | Yanchen Guan *et al.*; University of Macau-led team with Tongji, Tsinghua, MUST, and University of Hawaii; IEEE T-IV 2025 | world-model architecture: perception / memory / controller / transition model; applications in driving-scenario generation and planning/control | Provides the early historical and architectural map; our review adds the loss-target-based state hierarchy and transparent dual admission route | [[Paper](https://arxiv.org/abs/2403.02622)] [[Journal](https://doi.org/10.1109/TIV.2024.3398357)] |
-| Thematic DWM | 2026 | [**Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges**](https://arxiv.org/abs/2603.09086) | Rongxiang Zeng and Yongqi Dong; RWTH Aachen + TU Delft; arXiv, under review at IEEE T-ITS | target: latent worlds / actions / generators; form: continuous / discrete / hybrid; geometry / topology / semantic priors; five internal mechanics, four uses, and closed-loop evaluation | Gives detailed latent design, robustness, deliberation-cost, and deployment criteria; our review places these within the broader observation/scene/latent hierarchy | [[Paper](https://arxiv.org/abs/2603.09086)] |
-| Thematic DWM | 2026 | [**Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models**](https://arxiv.org/abs/2606.13840) | Senkang Hu *et al.*; City University of Hong Kong + Lingnan University; arXiv | information exchange → shared state → inter-agent cognition → cooperative planning; collaborative perception, communication, and closed-loop validation | Reorganizes more than 380 publications around shared predictive state; supports our entity-interaction, system-role, simulator, and safety sections | [[Paper](https://arxiv.org/abs/2606.13840)] [[List](https://github.com/dl-m9/Multi-Agent-Embodied-Autonomous-Driving)] |
-| Thematic DWM | 2025 | [**Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook**](https://doi.org/10.36227/techrxiv.176523308.84756413/v1) | Feiyang Jia, Caiyan Jia, Ziying Song *et al.* (13 authors); TechRxiv preprint | generation / planning / enhancement crossed with Robustness 1.0 / 2.0 / 3.0; model design, task, evaluation, and adaptation | Provides the staged robustness and open-world maturity axis used by our evaluation, runtime assurance, distribution-shift, and deployment sections | [[Paper](https://doi.org/10.36227/techrxiv.176523308.84756413/v1)] [[List](https://github.com/MoyangSensei/AwesomeRobustDWM)] |
-| Thematic DWM | 2024 | [**Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey**](https://arxiv.org/abs/2411.02914) | Ao Fu *et al.*; Southeast University-led team with NJUST and UCAS-Terminus AI Lab; arXiv | video generation: traditional / diffusion; world models: perception-prediction / reinforcement learning; autoregressive and diffusion driving models | Clarifies the video-generation/world-model lineage, evaluation metrics, and conceptual boundary; non-Core generators are routed only to mechanism or data-engine support sections | [[Paper](https://arxiv.org/abs/2411.02914)] |
-| Adjacent AD | 2026 | [**Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis**](https://doi.org/10.1109/OJITS.2026.3660686) | Yuan Gao *et al.*; TUM-led academic-industry consortium; IEEE OJ-ITS 2026; literature through May 2025 | LLM / VLM / MLLM / diffusion / world model crossed with scenario generation / analysis; datasets, simulators, benchmarks, and metrics | Supplies data-engine, long-tail testing, controllability, simulator, benchmark, and safety resources without treating every foundation model as a world model | [[Paper](https://arxiv.org/abs/2506.11526)] [[List](https://github.com/TUM-AVS/FM-AD-Survey)] |
-| Adjacent AD | 2025 | [**A Survey on Future Physical World Generation for Autonomous Driving**](https://doi.org/10.1145/3769748.3773345) | Jianling Chu *et al.*; Hefei University of Technology + Chery; MMAsia 2025 | output: image / BEV / occupancy / point cloud; generator: diffusion / Transformer / adversarial models | Supplies observation- and geometry-level generation sources and baselines; only papers satisfying a Core admission route enter our primary taxonomy | [[Paper](https://doi.org/10.1145/3769748.3773345)] |
-| Adjacent AD | 2024 | [**A Survey on Multimodal Large Language Models for Autonomous Driving**](https://doi.org/10.1109/WACVW60836.2024.00106) | Can Cui *et al.*; Purdue + Tencent T Lab-led academic-industry team; WACV Workshops 2024, pp. 958-979 | MLLM tools for driving / transportation / maps; datasets, benchmarks, and LLVM-AD workshop papers | Supports the VLM/VLA boundary and discussions of semantic reasoning, grounding, hallucination, and interpretability | [[Paper](https://arxiv.org/abs/2311.12320)] [[List](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving)] |
-| Adjacent AD | 2024 | [**Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies**](https://arxiv.org/abs/2401.12888) | Lincan Li *et al.*; UNSW + CSIRO + BYD-led team; arXiv | dataset generations / big-data systems / data mining / development and post-deployment closed loops | Supplies data-engine and engineering-loop references; its data-feedback “closed loop” is explicitly distinguished from recursive world-model rollout | [[Paper](https://arxiv.org/abs/2401.12888)] [[List](https://github.com/LincanLi98/Awesome-Data-Centric-Autonomous-Driving)] |
-
-## Contents
-
-- [Autonomous driving background milestones](#autonomous-driving-background-milestones)
-- [Autonomous driving world model surveys](#autonomous-driving-world-model-surveys)
-- [Scope and taxonomy](#scope-and-taxonomy)
-- [2026 literature update](#2026-literature-update)
-- [Core taxonomy](#core-taxonomy-world-models-by-future-state-representation)
-  - [3.1.1 Future image and video](#311-observation-level-future-image-and-video)
-  - [3.1.2 Future point cloud](#312-observation-level-future-point-cloud)
-  - [3.2.1 Entities and interactions](#321-scene-level-entities-and-interactions)
-  - [3.2.2 BEV, occupancy, and geometry](#322-scene-level-bev-occupancy-and-geometry)
-  - [3.3 Latent-space prediction](#33-latent-space-prediction)
-- [Rollout mechanisms](#rollout-mechanisms)
-- [System roles](#system-roles)
-- [Evaluation and benchmarks](#evaluation-and-benchmarks)
-- [Datasets](#datasets)
-- [Simulators and platforms](#simulators-and-platforms)
-- [Safety, robustness, and deployment](#safety-robustness-and-deployment)
-- [Workshops and challenges](#workshops-and-challenges)
-- [Related collections](#related-collections)
-- [Contributing and acknowledgements](#contributing-and-acknowledgements)
+| Coverage | Year | Survey | Authors / team and status | Authors' taxonomy and coverage | Contribution to this review |
+| --- | ---: | --- | --- | --- | --- |
+| General DWM | 2026 | [**World Models for Autonomous Driving: From Future Generation to Decision Making**](https://doi.org/10.2139/ssrn.6827179) | Han Huang *et al.*; Tongji-led multi-institution team; SSRN working paper | future-world generation / planning with world models / hybrid prediction-planning; MPC-oriented comparison by state representation and generator | Connects prediction to decision, uncertainty, cost evaluation, and receding-horizon control; our review keeps representation, rollout mechanism, system role, and assurance as separate axes |
+| General DWM | 2025 | [**The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey**](https://arxiv.org/abs/2502.10498) | Sifan Tu *et al.*; Huazhong University of Science and Technology + Baidu; arXiv v2, updated 2026 | ecosystem of simulators / datasets / metrics; predicted modality: video / point cloud / occupancy / latent feature / traffic map; applications in generation, simulation, driving enhancement, and pretraining | Supplies the broadest modality-centered comparison and quantitative tables; our review separates entity from geometry and adds explicit author-defined/review-classified admission routes |
+| General DWM | 2025 | [**Research on World Models for Connected Automated Driving: Advances, Challenges, and Outlook**](https://doi.org/10.3390/app15168986) | Nuo Chen and Xiang Liu; Shanghai University of Engineering Science; *Applied Sciences* 15(16), 8986 | cooperative perception / prediction / decision / control / human-machine collaboration / scene generation | Extends the map to connected automated vehicles and vehicle-road-cloud cooperation; its broad CAV pipeline categories inform our system-role discussion but do not determine Core admission |
+| General DWM | 2025 | [**A Survey of World Models for Autonomous Driving**](https://arxiv.org/abs/2501.11260) | Tuo Feng, Wenguan Wang, and Yi Yang; Zhejiang University CCAI; arXiv v4, manuscript submitted to ACM | future physical-world generation / behavior planning / prediction-planning interaction; image / BEV / occupancy-grid / point-cloud generation subtypes | Consolidates generation, planning, training paradigms, benchmarks, and performance; our review makes state representation, mechanism, and system role orthogonal |
+| General DWM | 2025 | [**World Models for Autonomous Driving: An Initial Survey**](https://doi.org/10.1109/TIV.2024.3398357) | Yanchen Guan *et al.*; University of Macau-led team with Tongji, Tsinghua, MUST, and University of Hawaii; IEEE T-IV 2025 | world-model architecture: perception / memory / controller / transition model; applications in driving-scenario generation and planning/control | Provides the early historical and architectural map; our review adds the loss-target-based state hierarchy and transparent dual admission route |
+| Thematic DWM | 2026 | [**Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges**](https://arxiv.org/abs/2603.09086) | Rongxiang Zeng and Yongqi Dong; RWTH Aachen + TU Delft; arXiv, under review at IEEE T-ITS | target: latent worlds / actions / generators; form: continuous / discrete / hybrid; geometry / topology / semantic priors; five internal mechanics, four uses, and closed-loop evaluation | Gives detailed latent design, robustness, deliberation-cost, and deployment criteria; our review places these within the broader observation/scene/latent hierarchy |
+| Thematic DWM | 2026 | [**Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models**](https://arxiv.org/abs/2606.13840) | Senkang Hu *et al.*; City University of Hong Kong + Lingnan University; arXiv | information exchange -> shared state -> inter-agent cognition -> cooperative planning; collaborative perception, communication, and closed-loop validation | Reorganizes more than 380 publications around shared predictive state; supports our entity-interaction, system-role, simulator, and safety sections |
+| Thematic DWM | 2025 | [**Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook**](https://doi.org/10.36227/techrxiv.176523308.84756413/v1) | Feiyang Jia, Caiyan Jia, Ziying Song *et al.* (13 authors); TechRxiv preprint | generation / planning / enhancement crossed with Robustness 1.0 / 2.0 / 3.0; model design, task, evaluation, and adaptation | Provides the staged robustness and open-world maturity axis used by our evaluation, runtime assurance, distribution-shift, and deployment sections |
+| Thematic DWM | 2024 | [**Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey**](https://arxiv.org/abs/2411.02914) | Ao Fu *et al.*; Southeast University-led team with NJUST and UCAS-Terminus AI Lab; arXiv | video generation: traditional / diffusion; world models: perception-prediction / reinforcement learning; autoregressive and diffusion driving models | Clarifies the video-generation/world-model lineage, evaluation metrics, and conceptual boundary; non-Core generators are routed only to mechanism or data-engine support sections |
+| Adjacent AD | 2026 | [**Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis**](https://doi.org/10.1109/OJITS.2026.3660686) | Yuan Gao *et al.*; TUM-led academic-industry consortium; IEEE OJ-ITS 2026; literature through May 2025 | LLM / VLM / MLLM / diffusion / world model crossed with scenario generation / analysis; datasets, simulators, benchmarks, and metrics | Supplies data-engine, long-tail testing, controllability, simulator, benchmark, and safety resources without treating every foundation model as a world model |
+| Adjacent AD | 2025 | [**A Survey on Future Physical World Generation for Autonomous Driving**](https://doi.org/10.1145/3769748.3773345) | Jianling Chu *et al.*; Hefei University of Technology + Chery; MMAsia 2025 | output: image / BEV / occupancy / point cloud; generator: diffusion / Transformer / adversarial models | Supplies observation- and geometry-level generation sources and baselines; only papers satisfying a Core admission route enter our primary taxonomy |
+| Adjacent AD | 2024 | [**A Survey on Multimodal Large Language Models for Autonomous Driving**](https://doi.org/10.1109/WACVW60836.2024.00106) | Can Cui *et al.*; Purdue + Tencent T Lab-led academic-industry team; WACV Workshops 2024, pp. 958-979 | MLLM tools for driving / transportation / maps; datasets, benchmarks, and LLVM-AD workshop papers | Supports the VLM/VLA boundary and discussions of semantic reasoning, grounding, hallucination, and interpretability |
+| Adjacent AD | 2024 | [**Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies**](https://arxiv.org/abs/2401.12888) | Lincan Li *et al.*; UNSW + CSIRO + BYD-led team; arXiv | dataset generations / big-data systems / data mining / development and post-deployment closed loops | Supplies data-engine and engineering-loop references; its data-feedback "closed loop" is explicitly distinguished from recursive world-model rollout |
 
 ## Scope and taxonomy
 
@@ -103,7 +104,7 @@ Resource labels: **P** = paper, **C** = code, **D** = data/model, **W** = websit
 
 ## 2026 literature update
 
-This update is a high-coverage snapshot through **7 August 2026**, not a frozen annual bibliography. We searched arXiv full text/metadata, OpenAlex, Crossref, Semantic Scholar, GitHub, the two driving-world-model survey lists, and the general [Awesome World Model](https://github.com/LMD0311/Awesome-World-Model) collection. Query families covered `driving/autonomous vehicle + world model`, `world-action model`, `latent/occupancy/LiDAR/video world model`, `interactive/generative simulator`, and `evaluation/safety/rollout`. Titles and identifiers were deduplicated; abstracts were checked before placement.
+This update is a high-coverage snapshot through **7 August 2026**, not a frozen annual bibliography. Searches covered scholarly metadata, full text, official proceedings, author project pages, and code releases. Query families included `driving/autonomous vehicle + world model`, `world-action model`, `latent/occupancy/LiDAR/video world model`, `interactive/generative simulator`, and `evaluation/safety/rollout`. Titles and identifiers were deduplicated; abstracts were checked before placement.
 
 **2026 venue audit:** official proceedings or virtual-program pages were checked for [CVPR 2026](https://openaccess.thecvf.com/CVPR2026?day=all), [ICLR 2026](https://proceedings.iclr.cc/paper_files/paper/2026), and [ICML 2026](https://icml.cc/virtual/2026/papers.html). AAAI 2026 proceedings and currently public ECCV/ICRA/IROS/ITSC records were cross-checked through publisher metadata and author pages. NeurIPS 2026 has not yet published proceedings as of the update date, so accepted-paper completeness cannot yet be claimed for that venue.
 
@@ -596,19 +597,8 @@ Deployment-specific optimization references include [X-Cache](https://arxiv.org/
 - **CVPR 2024 Autonomous Grand Challenge - Predictive World Model Track**. [[W](https://opendrivelab.com/challenge2024/#predictive_world_model)]
 - **CVPR 2023 Workshop on Autonomous Driving - 3D Occupancy Forecasting Challenge**. [[W](https://eval.ai/web/challenges/challenge-page/1977/overview)] [[D](https://www.argoverse.org/av2.html)]
 
-## Related collections
-
-- [LMD0311/Awesome-World-Model](https://github.com/LMD0311/Awesome-World-Model) - extensive chronological coverage of driving, robotics, and general world models.
-- [OpenDriveLab/DriveAGI](https://github.com/OpenDriveLab/DriveAGI) - driving foundation models, data, and benchmarks.
-- [GigaAI-research/General-World-Models-Survey](https://github.com/GigaAI-research/General-World-Models-Survey) - general world models and video generation.
-- [worldbench/survey](https://github.com/worldbench/survey) - 3D and 4D world modeling.
-- [MoyangSensei/AwesomeRobustDWM](https://github.com/MoyangSensei/AwesomeRobustDWM) - robustness of driving world models.
-- [IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving](https://github.com/IrohXu/Awesome-Multimodal-LLM-Autonomous-Driving) - multimodal LLMs for autonomous driving.
-
-## Contributing and acknowledgements
+## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR. In particular, provide an official paper link, quote where the authors define the work as a world model or world-action model, and place it in one primary category.
-
-This collection was initially cross-checked against [LMD0311/Awesome-World-Model](https://github.com/LMD0311/Awesome-World-Model). We thank its maintainers and all authors who make papers, code, data, and evaluation tools publicly available. Entries here are independently selected and reorganized around the taxonomy of our review.
 
 If you use this list, please cite the original papers. Citation information for our companion review will be added after publication.
